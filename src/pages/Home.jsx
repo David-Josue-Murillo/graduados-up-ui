@@ -1,9 +1,10 @@
 import React from "react";
+import Nav from "../components/Nav";
 
 const Home = () => {
     return (
         <>
-            <h1 className="text-lg font-bold">Graduates</h1>
+            <Nav />
         </>
     );
 };
