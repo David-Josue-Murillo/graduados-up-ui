@@ -9,14 +9,14 @@ const Header = () => {
                     <img src={logo} alt="Logo" className='w-full h-full object-cover' />
                 </div>
                 <nav>
-                    <ul className="flex space-x-6 font-semibold mt-3 text-lg">
+                    <ul className="flex space-x-6 font-medium mt-3 text-lg font-farro">
                         <li><a href="#home" className="hover:text-green-600">Inicio</a></li>
                         <li><a href="#docs" className="hover:text-green-600">Documentación</a></li>
                         <li><a href="#examples" className="hover:text-green-600">Ejemplos</a></li>
                         <li><a href="#up" className="hover:text-green-600">Up</a></li>
                     </ul>
                 </nav>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4 mt-1">
                     <div>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
