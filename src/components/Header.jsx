@@ -1,14 +1,16 @@
 import React from 'react'
-import '../assets/img/logo_light.png'
+import logo from '../assets/img/logo_light.png'
 
 const Header = () => {
     return (
         <>
             <header className="flex justify-between items-center py-4 px-8 bg-gray-50 border-b">
-                <div className="text-2xl font-bold text-green-600">Graduados UP</div>
+                <div className='"w-20 h-20 overflow-hidden'>
+                    <img src={logo} alt="Logo" className='w-full h-full object-cover' />
+                </div>
                 <nav>
                     <ul className="flex space-x-6">
-                        <li><a href="#home" className="hover:text-green-600">Home</a></li>
+                        <li><a href="#home" className="hover:text-green-600">Inicio</a></li>
                         <li><a href="#docs" className="hover:text-green-600">Documentación</a></li>
                         <li><a href="#examples" className="hover:text-green-600">Ejemplos</a></li>
                         <li><a href="#up" className="hover:text-green-600">Up</a></li>
