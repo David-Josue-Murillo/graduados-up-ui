@@ -1,27 +1,30 @@
 import React, { useState } from 'react'
 import logo from '../assets/img/logo_light.png'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { Link } from 'react-scroll'
 import { CiMenuFries } from 'react-icons/ci';
-import { FaTimes } from 'react-icons/fa';
+import { FiX } from 'react-icons/fi';
 
 const Header = () => {
+    AOS.init();
 
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
 
     return (
         <>
-            <header className="flex justify-between items-center flex-wrap py-4 px-6 md:px-12 bg-gray-50 border-b">
-                <div className='w-5/12 md:w-1/6  overflow-hidden'>
+            <header className="flex justify-between items-center flex-wrap py-4 px-6 lg:px-12 bg-gray-50 border-b">
+                <div className='w-5/12 sm:w-3/12 md:w-2/12 lg:w-1/6  overflow-hidden' data-aos="fade-right">
                     <img src={logo} alt="Logo" className='w-full h-full object-cover' />
                 </div>
 
-                <button className='block sm:hidden transition' onClick={handleClick}>
-                    {click ? <FaTimes /> : <CiMenuFries />}
+                <button className='block md:hidden transition' onClick={handleClick}>
+                    {click ? <FiX /> : <CiMenuFries />}
                 </button>
 
-                <nav className={ click ? 'flex w-full text-center' : 'hidden md:block md:mr-32'}>
-                    <ul className="w-full px-5 mt-5 space-x-8  font-farro text-sm font-medium md:flex md:text-base">
+                <nav className={ click ? 'flex w-full text-center mt-5' : 'hidden md:block lg:mr-32'}>
+                    <ul className="w-full px-5 mt-5 space-x-8  font-farro text-sm font-medium md:flex md:text-xs lg:text-base">
                         <Link spy={true} smooth={true} to='Home'>
                             <li className='hover:text-green-600'>Inicio</li>
                         </Link>
@@ -37,8 +40,8 @@ const Header = () => {
                     </ul>
                 </nav>
                 
-                <div className="items-center space-x-6 mt-1 hidden md:flex">
-                    <div className='hover:scale-110'>
+                <div className={click ? 'flex mt-10 m-auto space-x-6' : 'hidden items-center space-x-6 mt-1 lg:flex'}>
+                    <div className='mt-1 hover:scale-110'>
                         <Link to=''>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
