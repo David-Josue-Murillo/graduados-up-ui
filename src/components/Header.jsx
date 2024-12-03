@@ -24,7 +24,7 @@ const Header = () => {
                 </button>
 
                 <nav className={ click ? 'flex w-full text-center mt-5' : 'hidden md:block lg:mr-32'}>
-                    <ul className="w-full px-5 mt-5 space-x-8  font-farro text-sm font-medium md:flex md:text-xs lg:text-base">
+                    <ul className="w-full px-5 mt-5 space-x-8  font-farro text-sm font-medium md:mt-3 md:flex md:text-xs lg:mt-5 lg:text-base">
                         <Link spy={true} smooth={true} to='Home'>
                             <li className='hover:text-green-600'>Inicio</li>
                         </Link>
@@ -40,8 +40,8 @@ const Header = () => {
                     </ul>
                 </nav>
                 
-                <div className={click ? 'flex mt-10 m-auto space-x-6' : 'hidden items-center space-x-6 mt-1 lg:flex'}>
-                    <div className='mt-1 hover:scale-110'>
+                <div className={click ? 'flex mt-10 m-auto space-x-6' : 'hidden items-center space-x-6 md:mt-2 md:flex lg:mt-3'}>
+                    <div className='hover:scale-110'>
                         <Link to=''>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
