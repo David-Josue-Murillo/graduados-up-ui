@@ -7,7 +7,7 @@ import 'aos/dist/aos.css';
 import { CiMenuFries } from 'react-icons/ci';
 import { FiX } from 'react-icons/fi';
 
-const Header = ({handleChangeTheme}) => {
+const Header = () => {
     AOS.init();
 
     const [click, setClick] = useState(false);
@@ -15,7 +15,7 @@ const Header = ({handleChangeTheme}) => {
 
     return (
         <>
-            <header className="flex justify-between items-center flex-wrap py-4 px-6 lg:px-12 bg-gray-50 border-b">
+            <header className="flex justify-between items-center flex-wrap py-4 px-6 lg:px-12 bg-gray-50 border-b dark:bg-slate-900">
                 <Logo />
 
                 <button className='block md:hidden transition' onClick={handleClick}>
@@ -26,10 +26,7 @@ const Header = ({handleChangeTheme}) => {
                     click={click}
                 />
                 
-                <IconsNav 
-                    click={click}
-                    handleChangeTheme={handleChangeTheme}
-                />
+                <IconsNav/>
             </header>
         </>
     )

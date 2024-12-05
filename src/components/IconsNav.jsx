@@ -1,6 +1,22 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll'
 
-const IconsNav = ({click, handleChangeTheme}) => {
+const IconsNav = ({click}) => {
+
+    const [theme, setTheme] = useState('light');
+
+    useEffect(() => {
+        if(theme === 'dark') {
+            document.querySelector("html").classList.add('dark');
+        } else {
+            document.querySelector("html").classList.remove('dark');
+        }
+    }, [theme])
+
+    const handleChangeTheme = () => {
+        setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+    }
+
     return (
         <div className={click ? 'flex mt-10 m-auto space-x-6' : 'hidden items-center space-x-6 md:mt-2 md:flex lg:mt-3'}>
             <button className='hover:scale-110'
