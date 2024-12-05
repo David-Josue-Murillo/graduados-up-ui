@@ -7,7 +7,7 @@ import 'aos/dist/aos.css';
 import { CiMenuFries } from 'react-icons/ci';
 import { FiX } from 'react-icons/fi';
 
-const Header = () => {
+const Header = ({handleChangeTheme}) => {
     AOS.init();
 
     const [click, setClick] = useState(false);
@@ -28,6 +28,7 @@ const Header = () => {
                 
                 <IconsNav 
                     click={click}
+                    handleChangeTheme={handleChangeTheme}
                 />
             </header>
         </>
