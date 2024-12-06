@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../components/Header";
-import Navbar from "../components/headerComponents/Navbar";
 import HeroSection from "../components/HeroSection";
 
 const Home = ({handleChangeTheme, theme}) => {

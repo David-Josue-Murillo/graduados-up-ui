@@ -29,6 +29,7 @@ const Header = ({handleChangeTheme, theme}) => {
                 />
                 
                 <IconsNav
+                    click={click}
                     handleChangeTheme={handleChangeTheme}
                     theme={theme}
                 />
