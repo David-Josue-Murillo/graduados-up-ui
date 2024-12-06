@@ -5,22 +5,22 @@ import 'aos/dist/aos.css';
 
 const HeroSection = ({theme}) => {
     return (
-        <section className="flex flex-col w-8/12 m-auto items-center text-center mt-12 px-4" data-aos="fade-up">
+        <section className="flex flex-col md:w-10/12 lg:w-8/12 m-auto items-center text-center mt-12 px-4" data-aos="fade-up">
             {/* Title */}
-            <h1 className="text-4xl md:text-6xl font-farro-bold font-extrabold leading-tight text-gray-800 dark:text-slate-50">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-farro-bold font-extrabold leading-tight text-gray-800 dark:text-slate-50">
                 Cantidad de graduados <br /> por año en la <br className="hidden sm:block" />
                 <span className="text-green-700">Universidad de Panamá</span>
             </h1>
 
 
             {/* Subtitle */}
-            <p className="text-gray-600 dark:dark:text-slate-500 text-lg md:text-xl mt-4">
+            <p className="text-gray-600 dark:dark:text-slate-500 text-sm md:text-base lg:text-xl mt-4">
                 Esta es una API RESTful que permite gestionar datos relacionados con
                 graduados universitarios de la Universidad de Panamá.
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-wrap justify-center gap-4 mt-6">
+            <div className="flex flex-wrap justify-center gap-4 mt-10 text-xs md:text-sm md:mt-6">
                 <button className="bg-green-600 text-white px-6 py-2 rounded-md shadow hover:bg-green-700">
                     Get Started
                 </button>
@@ -32,7 +32,7 @@ const HeroSection = ({theme}) => {
                     <GitHubIcons 
                         theme={theme}
                     />
-                    <span className="pl-2">GitHub</span>
+                    <span className="pl-2 pt-1">GitHub</span>
                 </a>
             </div>
         </section>
