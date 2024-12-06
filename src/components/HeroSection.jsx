@@ -1,6 +1,7 @@
 import React from "react";
+import GitHubIcons from "./icons/GitHubIcons";
 
-const HeroSection = () => {
+const HeroSection = ({theme}) => {
     return (
         <section className="flex flex-col w-8/12 m-auto items-center text-center mt-12 px-4">
             {/* Title */}
@@ -24,9 +25,12 @@ const HeroSection = () => {
                 
                 <a
                     href="https://github.com/David-Josue-Murillo/graduados-up-ui"
-                    className="border border-gray-300 px-6 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:border-green-700 hover:text-green-700"
+                    className="flex border border-gray-300 px-4 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:border-green-700 hover:text-green-700"
                 >
-                    GitHub
+                    <GitHubIcons 
+                        theme={theme}
+                    />
+                    <span className="pl-2">GitHub</span>
                 </a>
             </div>
         </section>
