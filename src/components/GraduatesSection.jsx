@@ -4,12 +4,18 @@ import ChartComponent from "./ChartComponent";
 const GraduatesSection = () => {
     return (
         <div className="container mx-auto px-4">
-            <h1 className="text-2xl font-bold text-center text-green-600 my-8">
-                Estudiantes Graduados de la UP
-            </h1>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div className=" my-8">
+                <h1 className="text-4xl font-farro-bold font-bold text-center text-green-600">
+                    Estudiantes Graduados de la UP
+                </h1>
+                <p className="text-center text-gray-600 dark:dark:text-slate-500">
+                    Aquí encontrarás información sobre los estudiantes graduados de la Universidad de Panamá.
+                </p>
+            </div>
+        
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mx-6 mt-12">
                 {/* Filtro */}
-                <div className="bg-white shadow-md rounded-lg p-4 border">
+                <div className="bg-white shadow-md rounded-lg p-4 border border-yellow-200">
                     <h2 className="text-lg font-bold mb-4 text-yellow-600">Filtrar por</h2>
                     <ul className="space-y-2">
                         {["2018-2024", "2010-2018", "2000-2010"].map((range, index) => (
@@ -21,8 +27,9 @@ const GraduatesSection = () => {
                         ))}
                     </ul>
                 </div>
+
                 {/* Gráfico */}
-                <div className="bg-white shadow-md rounded-lg p-4">
+                <div className="bg-white shadow-md rounded-lg p-4 md:col-span-2 border border-green-200">
                     <ChartComponent />
                 </div>
             </div>

@@ -7,9 +7,9 @@ const HeroSection = ({theme}) => {
     return (
         <section className="flex flex-col md:w-10/12 lg:w-8/12 m-auto items-center text-center mt-12 px-4" data-aos="fade-up">
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-farro-bold font-extrabold leading-tight text-gray-800 dark:text-slate-50">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-farro-bold font-extrabold leading-tight text-green-700 dark:text-green-600">
                 Cantidad de graduados <br /> por año en la <br className="hidden sm:block" />
-                <span className="text-green-700">Universidad de Panamá</span>
+                <span className="text-yellow-600">Universidad de Panamá</span>
             </h1>
 
 
