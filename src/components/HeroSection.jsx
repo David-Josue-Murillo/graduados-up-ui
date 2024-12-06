@@ -14,13 +14,13 @@ const HeroSection = ({theme}) => {
 
 
             {/* Subtitle */}
-            <p className="text-gray-600 dark:dark:text-slate-500 text-sm md:text-base lg:text-xl mt-4">
+            <p className="text-gray-600 dark:dark:text-slate-500 text-sm md:text-base lg:text-xl mt-6">
                 Esta es una API RESTful que permite gestionar datos relacionados con
                 graduados universitarios de la Universidad de Panamá.
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-wrap justify-center gap-4 mt-10 text-xs md:text-sm md:mt-6">
+            <div className="flex flex-wrap justify-center gap-4 mt-10 text-xs md:text-sm md:mt-10">
                 <button className="bg-green-600 text-white px-6 py-2 rounded-md shadow hover:bg-green-700">
                     Get Started
                 </button>

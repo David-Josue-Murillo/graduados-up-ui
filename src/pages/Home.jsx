@@ -20,7 +20,9 @@ const Home = ({click, handleClick, handleChangeTheme, theme}) => {
                     />  
 
                     {/* Info Section */}
-                    <GraduatesSection />
+                    <section className="mt-24">
+                        <GraduatesSection />
+                    </section>
                 </main>
             </div>
         </>
