@@ -1,7 +1,6 @@
 import GraduatesSection from "../components/GraduatesSection";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
-import InfoSection from "../components/InfoSection";
 
 const Home = ({click, handleClick, handleChangeTheme, theme}) => {
     return (
@@ -22,7 +21,6 @@ const Home = ({click, handleClick, handleChangeTheme, theme}) => {
 
                     {/* Info Section */}
                     <GraduatesSection />
-                    <InfoSection />
                 </main>
             </div>
         </>
