@@ -7,11 +7,8 @@ import 'aos/dist/aos.css';
 import { CiMenuFries } from 'react-icons/ci';
 import { FiX } from 'react-icons/fi';
 
-const Header = ({handleChangeTheme, theme}) => {
+const Header = ({click, handleClick, handleChangeTheme, theme}) => {
     AOS.init();
-
-    const [click, setClick] = useState(false);
-    const handleClick = () => setClick(!click);
 
     return (
         <>
