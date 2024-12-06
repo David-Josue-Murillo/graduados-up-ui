@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import Logo from './headerComponents/Logo';
 import IconsNav from './headerComponents/IconsNav';
 import Navbar from './headerComponents/Navbar';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { CiMenuFries } from 'react-icons/ci';
 import { FiX } from 'react-icons/fi';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Header = ({click, handleClick, handleChangeTheme, theme}) => {
     AOS.init();

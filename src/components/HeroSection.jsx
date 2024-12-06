@@ -1,9 +1,11 @@
 import React from "react";
 import GitHubIcons from "./icons/GitHubIcons";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const HeroSection = ({theme}) => {
     return (
-        <section className="flex flex-col w-8/12 m-auto items-center text-center mt-12 px-4">
+        <section className="flex flex-col w-8/12 m-auto items-center text-center mt-12 px-4" data-aos="fade-up">
             {/* Title */}
             <h1 className="text-4xl md:text-6xl font-farro-bold font-extrabold leading-tight text-gray-800 dark:text-slate-50">
                 Cantidad de graduados <br /> por año en la <br className="hidden sm:block" />
