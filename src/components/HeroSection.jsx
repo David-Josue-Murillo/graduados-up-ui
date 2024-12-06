@@ -23,7 +23,7 @@ const HeroSection = () => {
                 </button>
                 
                 <a
-                    href="https://github.com"
+                    href="https://github.com/David-Josue-Murillo/graduados-up-ui"
                     className="border border-gray-300 px-6 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:border-green-700 hover:text-green-700"
                 >
                     GitHub

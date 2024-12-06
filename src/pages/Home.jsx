@@ -12,7 +12,10 @@ const Home = ({click, handleClick, handleChangeTheme, theme}) => {
                     theme={theme}
                 />
 
-                <HeroSection />
+                <HeroSection 
+                    click={click}
+                    theme={theme}
+                />
             </div>
         </>
     );
