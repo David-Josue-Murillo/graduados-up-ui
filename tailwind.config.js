@@ -12,6 +12,7 @@ export default {
       },
       fontFamily: {
         'farro': ['Farro', 'sans-serif'],
+        'farro-bold': ['Farro-bold', 'sans-serif'],
       }
     },
   },

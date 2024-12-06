@@ -6,7 +6,7 @@ import HeroSection from "../components/HeroSection";
 const Home = ({handleChangeTheme, theme}) => {
     return (
         <>
-            <div className="min-h-screen bg-slate-50 dark:bg-gray-950">
+            <div className="min-h-screen bg-slate-50 dark:bg-gray-950 font-farro">
                 <Header 
                     handleChangeTheme={handleChangeTheme}
                     theme={theme}

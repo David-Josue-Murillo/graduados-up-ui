@@ -6,3 +6,9 @@
     font-family: 'farro';
     src: url('./assets/fonts/Farro-Regular.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'farro-bold';
+    src: url('./assets/fonts/Farro-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
