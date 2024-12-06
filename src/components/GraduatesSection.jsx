@@ -33,16 +33,18 @@ const GraduatesSection = () => {
                     <ChartComponent />
                 </div>
             </div>
+
             {/* Información adicional */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 text-center">
-                <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12 text-center">
+                <div className="w-8/12 m-auto">
                     <h3 className="text-xl font-semibold mb-2">¿What is this?</h3>
                     <p className="text-gray-500">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad
                         minim veniam.
                     </p>
                 </div>
-                <div>
+
+                <div className="w-8/12 m-auto">
                     <h3 className="text-xl font-semibold mb-2">¿Where do I start?</h3>
                     <p className="text-gray-500">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad

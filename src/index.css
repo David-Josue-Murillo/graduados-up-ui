@@ -12,3 +12,9 @@
     src: url('./assets/fonts/Farro-Bold.ttf') format('truetype');
     font-weight: bold;
 }
+
+@font-face {
+    font-family: 'farro-italic';
+    src: url('./assets/fonts/Farro-Light.ttf') format('truetype');
+    font-style: italic;
+}
