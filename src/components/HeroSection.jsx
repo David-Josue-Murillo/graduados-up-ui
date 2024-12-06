@@ -4,14 +4,14 @@ const HeroSection = () => {
     return (
         <section className="flex flex-col w-8/12 m-auto items-center text-center mt-12 px-4">
             {/* Title */}
-            <h1 className="text-4xl md:text-6xl font-farro-bold font-extrabold leading-tight text-gray-800">
+            <h1 className="text-4xl md:text-6xl font-farro-bold font-extrabold leading-tight text-gray-800 dark:text-slate-50">
                 Cantidad de graduados <br /> por año en la <br className="hidden sm:block" />
                 <span className="text-green-700">Universidad de Panamá</span>
             </h1>
 
 
             {/* Subtitle */}
-            <p className="text-gray-600 text-lg md:text-xl mt-4">
+            <p className="text-gray-600 dark:dark:text-slate-500 text-lg md:text-xl mt-4">
                 Esta es una API RESTful que permite gestionar datos relacionados con
                 graduados universitarios de la Universidad de Panamá.
             </p>
@@ -21,9 +21,10 @@ const HeroSection = () => {
                 <button className="bg-green-600 text-white px-6 py-2 rounded-md shadow hover:bg-green-700">
                     Get Started
                 </button>
+                
                 <a
                     href="https://github.com"
-                    className="border border-gray-300 px-6 py-2 rounded-md text-gray-600 hover:border-green-700 hover:text-green-700"
+                    className="border border-gray-300 px-6 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:border-green-700 hover:text-green-700"
                 >
                     GitHub
                 </a>
