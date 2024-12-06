@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll'
 
 const IconsNav = ({ click, handleChangeTheme, theme }) => {

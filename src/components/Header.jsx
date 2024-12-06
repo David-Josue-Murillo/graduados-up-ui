@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import Logo from './Logo';
-import Nav from './Nav';
-import IconsNav from './IconsNav';
+import Logo from './headerComponents/Logo';
+import IconsNav from './headerComponents/IconsNav';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { CiMenuFries } from 'react-icons/ci';
 import { FiX } from 'react-icons/fi';
+import Navbar from './headerComponents/Navbar';
 
 const Header = ({handleChangeTheme, theme}) => {
     AOS.init();
@@ -24,7 +24,7 @@ const Header = ({handleChangeTheme, theme}) => {
                     {click ? <FiX /> : <CiMenuFries />}
                 </button>
 
-                <Nav 
+                <Navbar 
                     click={click}
                 />
                 

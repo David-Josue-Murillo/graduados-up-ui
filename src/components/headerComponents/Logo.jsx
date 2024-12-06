@@ -1,5 +1,5 @@
-import logo_light from '../assets/img/logo_light.png'
-import logo_dark from '../assets/img/logo_dark.png'
+import logo_light from '../../assets/img/logo_light.png'
+import logo_dark from '../../assets/img/logo_dark.png'
 
 const Logo = ({theme}) => {
     return (

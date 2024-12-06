@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-scroll'
 
-const Nav = ({click}) => {
+const Navbar = ({click}) => {
     return (
         <nav className={click ? 'flex w-full text-center mt-5' : 'hidden md:block lg:mr-32'}>
             <ul className="w-full px-5 mt-5 space-x-8  font-farro text-sm font-medium md:mt-3 md:flex md:text-xs lg:mt-5 lg:text-base">
@@ -22,4 +22,4 @@ const Nav = ({click}) => {
     )
 }
 
-export default Nav
+export default Navbar

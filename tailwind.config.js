@@ -4,6 +4,12 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        green: {
+          600: "#16a34a",
+          700: "#15803d",
+        }
+      },
       fontFamily: {
         'farro': ['Farro', 'sans-serif'],
       }
