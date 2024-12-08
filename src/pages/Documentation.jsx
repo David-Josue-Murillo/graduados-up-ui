@@ -1,5 +1,8 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import SideBar from "../components/SideBar";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const Documentation = ({ click, handleClick, handleChangeTheme, theme }) => {
@@ -12,6 +15,11 @@ const Documentation = ({ click, handleClick, handleChangeTheme, theme }) => {
                     handleChangeTheme={handleChangeTheme}
                     theme={theme}
                 />
+
+                <div className="flex gap-4">
+                    <SideBar />
+                    
+                </div>
             </div>
         </>
     )
