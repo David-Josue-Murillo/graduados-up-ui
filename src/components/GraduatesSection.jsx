@@ -54,7 +54,7 @@ const GraduatesSection = () => {
                 <div className="w-8/12 m-auto">
                     <h3 className="text-xl font-semibold mb-2">¿Por dónde empiezo?</h3>
                     <p className="text-gray-500 text-sm">
-                        Accede a la documentación de la API para obtener información sobre cómo consumir los datos y realizar consultas.
+                        Accede a la <a className="text-blue-600 cursor-pointer">documentación</a> de la API para obtener información sobre cómo consumir los datos y realizar consultas.
                     </p>
                 </div>
             </div>
