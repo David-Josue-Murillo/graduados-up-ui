@@ -6,7 +6,7 @@ const SideBar = () => {
 
     // Elementos de navegación
     const navItems = [
-        'Información',
+        'Introduccion',
         'Empezar',
         'Endpoints',
         'Ejemplos de uso',
