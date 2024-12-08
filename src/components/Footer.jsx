@@ -16,7 +16,7 @@ const Footer = () => {
                     {/* Navegación */}
                     
                     <div className="m-auto">
-                        <p className="text-sm font-extralight">
+                        <p className="text-sm text-center font-extralight">
                             Creado por David Murillo, Estudiante de la Universidad de Panamá. CRUV Veraguas. LIGEE 2024
                         </p>
                     </div>
@@ -25,7 +25,7 @@ const Footer = () => {
                     {/* Redes sociales */}
                     <div className="m-auto">
                         <h3 className="text-lg font-bold mb-2">Mis redes sociales</h3>
-                        <div className="flex space-x-4">
+                        <div className="flex space-x-4 justify-center">
                             <a
                                 href="#"
                                 className="hover:text-green-400 transition-colors"
