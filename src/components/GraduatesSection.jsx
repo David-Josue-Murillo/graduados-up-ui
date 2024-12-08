@@ -25,6 +25,14 @@ const GraduatesSection = () => {
                                 </button>
                             </li>
                         ))}
+                        
+                        {["Ingeniería", "Ciencias", "Humanidades"].map((range, index) => (
+                            <li key={index}>
+                                <button className="w-full py-2 px-4 text-left border border-green-400 rounded-md hover:bg-green-100 transition">
+                                    Graduados en {range}
+                                </button>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
@@ -37,18 +45,16 @@ const GraduatesSection = () => {
             {/* Información adicional */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12 text-center">
                 <div className="w-8/12 m-auto">
-                    <h3 className="text-xl font-semibold mb-2">¿What is this?</h3>
-                    <p className="text-gray-500">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad
-                        minim veniam.
+                    <h3 className="text-xl font-semibold mb-2">¿Qué es esto?</h3>
+                    <p className="text-gray-500 text-sm">
+                        Esto es una RESTful APIs para gestionar y visualizar datos de graduados universitarios, incluyendo su información académica, campus, carreras y facultades.
                     </p>
                 </div>
 
                 <div className="w-8/12 m-auto">
-                    <h3 className="text-xl font-semibold mb-2">¿Where do I start?</h3>
-                    <p className="text-gray-500">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad
-                        minim veniam.
+                    <h3 className="text-xl font-semibold mb-2">¿Por dónde empiezo?</h3>
+                    <p className="text-gray-500 text-sm">
+                        Accede a la documentación de la API para obtener información sobre cómo consumir los datos y realizar consultas.
                     </p>
                 </div>
             </div>
