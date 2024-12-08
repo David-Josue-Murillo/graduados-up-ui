@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 const Examples = ({ click, handleClick, handleChangeTheme, theme }) => {
     return (
         <>
-            <div>
+            <div className="min-h-screen bg-slate-50 dark:bg-gray-950 font-farro">
                 <Header
                     click={click}
                     handleClick={handleClick}
