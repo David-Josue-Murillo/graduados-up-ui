@@ -21,10 +21,10 @@ const SideBar = () => {
     };
 
     return (
-        <section data-aos="fade-right sm:w-4/12">
-            <aside className="dark:bg-gray-950 h-screen">
-                <nav className="mt-4 font-farro-light text-sm pr-4 sm:pr-10">
-                    <ul className="flex flex-col">
+        <section data-aos="fade-right" className="md:w-3/12">
+            <aside className="dark:bg-gray-950 h-screen p-4">
+                <nav className="mt-4 font-farro text-sm pr-4 sm:pr-10">
+                    <ul className="flex flex-col space-y-2">
                         {navItems.map((item) => (
                             <li
                                 key={item}

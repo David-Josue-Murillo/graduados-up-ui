@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import SideBar from "../components/SideBar";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import DocsHub from "../components/DocsHub";
 
 
 const Documentation = ({ click, handleClick, handleChangeTheme, theme }) => {
@@ -18,7 +19,7 @@ const Documentation = ({ click, handleClick, handleChangeTheme, theme }) => {
 
                 <div className="flex gap-4">
                     <SideBar />
-                    
+                    <DocsHub />
                 </div>
             </div>
         </>
