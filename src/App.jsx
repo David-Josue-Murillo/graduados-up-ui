@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home"
+import Documentation from "./pages/Documentation";
 
 function App() {
 
@@ -22,12 +24,30 @@ function App() {
 
     return (
         <>
-            <Home
-                click={click}
-                handleClick={handleClick}  
-                handleChangeTheme={handleChangeTheme}
-                theme={theme}
-            />
+            <BrowserRouter>
+            <Routes>
+                <Route 
+                    path="/" 
+                    element={
+                        <Home
+                            click={click}
+                            handleClick={handleClick}
+                            handleChangeTheme={handleChangeTheme}
+                            theme={theme}
+                        />
+                    } 
+                />
+                <Route 
+                    path="/documentation" 
+                    element={<Documentation 
+                            click={click}
+                            handleClick={handleClick}
+                            handleChangeTheme={handleChangeTheme}
+                            theme={theme}
+                        />
+                    } />
+            </Routes>
+        </BrowserRouter>
         </>
     )
 }

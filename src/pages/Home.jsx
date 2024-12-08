@@ -1,6 +1,6 @@
 import Footer from "../components/Footer";
-import GraduatesSection from "../components/GraduatesSection";
 import Header from "../components/Header";
+import GraduatesSection from "../components/GraduatesSection";
 import HeroSection from "../components/HeroSection";
 
 const Home = ({click, handleClick, handleChangeTheme, theme}) => {
