@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home"
 import Documentation from "./pages/Documentation";
+import Examples from "./pages/Examples";
 
 function App() {
 
@@ -25,29 +26,44 @@ function App() {
     return (
         <>
             <BrowserRouter>
-            <Routes>
-                <Route 
-                    path="/" 
-                    element={
-                        <Home
-                            click={click}
-                            handleClick={handleClick}
-                            handleChangeTheme={handleChangeTheme}
-                            theme={theme}
-                        />
-                    } 
-                />
-                <Route 
-                    path="/documentation" 
-                    element={<Documentation 
-                            click={click}
-                            handleClick={handleClick}
-                            handleChangeTheme={handleChangeTheme}
-                            theme={theme}
-                        />
-                    } />
-            </Routes>
-        </BrowserRouter>
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <Home
+                                click={click}
+                                handleClick={handleClick}
+                                handleChangeTheme={handleChangeTheme}
+                                theme={theme}
+                            />
+                        }
+                    />
+
+                    <Route
+                        path="/documentation"
+                        element={
+                            <Documentation
+                                click={click}
+                                handleClick={handleClick}
+                                handleChangeTheme={handleChangeTheme}
+                                theme={theme}
+                            />
+                        }
+                    />
+
+                    <Route
+                        path="/examples"
+                        element={
+                            <Examples
+                                click={click}
+                                handleClick={handleClick}
+                                handleChangeTheme={handleChangeTheme}
+                                theme={theme}
+                            />
+                        }
+                    />
+                </Routes>
+            </BrowserRouter>
         </>
     )
 }

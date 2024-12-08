@@ -2,6 +2,7 @@ import React from "react";
 import GitHubIcons from "./icons/GitHubIcons";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from "react-router-dom";
 
 const HeroSection = ({theme}) => {
     return (
@@ -21,9 +22,11 @@ const HeroSection = ({theme}) => {
 
             {/* Buttons */}
             <div className="flex flex-wrap justify-center gap-4 mt-10 text-xs md:text-sm md:mt-10">
-                <button className="bg-green-600 text-white px-6 py-2 rounded-md shadow hover:bg-green-700">
-                    Get Started
-                </button>
+                <Link to='/documentation'>
+                    <button className="bg-green-600 text-white px-6 py-3 rounded-md shadow hover:bg-green-700">
+                            Get Started
+                    </button>
+                </Link> 
                 
                 <a
                     href="https://github.com/David-Josue-Murillo/graduados-up-ui"

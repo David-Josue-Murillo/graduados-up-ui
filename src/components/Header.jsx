@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import Logo from './headerComponents/Logo';
 import IconsNav from './headerComponents/IconsNav';
 import Navbar from './headerComponents/Navbar';
