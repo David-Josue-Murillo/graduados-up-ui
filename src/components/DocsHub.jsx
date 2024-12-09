@@ -1,4 +1,32 @@
 import React from 'react'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+const jsonResponse = `{
+  "message": "Datos obtenidos exitosamente",
+  "data": [
+    {
+      "id": 1,
+      "quantity": 150,
+      "year": 2023,
+      "campus": {
+        "id": 1,
+        "name": "Centro Regional Universitario de Veraguas"
+      },
+      "career": {
+        "id": 2,
+        "name": "Ingeniería en Sistemas",
+        "faculty": {
+          "id": 1,
+          "name": "Facultad de Informática, Electrónica y Comunicación"
+        }
+      }
+    }
+  ],
+  "status": 200,
+  "errors": []
+}`
 
 const DocsHub = () => {
     return (
@@ -48,58 +76,14 @@ const DocsHub = () => {
                     </ul>
 
                     <h3 className='font-bold text-lg mt-8'>Response</h3>
-                    <div className='bg-gray-900 text-white p-4 border rounded-lg overflow-auto'>
-                        <div className='flex gap-4 pb-2 mb-2 border-b'>
-                            <h4 className='text-green-400'>GET</h4>
-                            <p className='text-sm my-auto'>https://www.graduadosup-api.com/api/graduates</p>
+                    <div className="bg-zinc-800 text-white p-4 border rounded-lg overflow-auto">
+                        <div className="flex gap-4 pb-2 border-b border-gray-700">
+                            <h4 className="text-green-400">GET</h4>
+                            <p className="text-sm my-auto">https://www.graduadosup-api.com/api/graduates</p>
                         </div>
-
-                        <pre>
-                            <code>
-                                {`{
-"message": "Datos obtenidos exitosamente",
-"data": [
-    {
-    "id": 1,
-    "quantity": 150,
-    "year": 2023,
-    "campus": {
-        "id": 1,
-        "name": "Centro Regional Universitario de Veraguas"
-    },
-    "career": {
-        "id": 2,
-        "name": "Ingeniería en Sistemas",
-        "faculty": {
-        "id": 1,
-        "name": "Facultad de Informática, Electrónica y Comunicación"
-        }
-    }
-    },
-    {
-    "id": 2,
-    "quantity": 120,
-    "year": 2022,
-    "campus": {
-        "id": 2,
-        "name": "Centro Regional Universitario de Coclé"
-    },
-    "career": {
-        "id": 3,
-        "name": "Licenciatura en Enfermería",
-        "faculty": {
-        "id": 2,
-        "name": "Facultad de Ciencias de la Salud"
-        }
-    }
-    }
-],
-"status": 200,
-"errors": []
-}`
-                                }
-                            </code>
-                        </pre>
+                        <SyntaxHighlighter language="json" style={materialDark}>
+                         {jsonResponse}
+                        </SyntaxHighlighter>
                     </div>
 
                 </section>
