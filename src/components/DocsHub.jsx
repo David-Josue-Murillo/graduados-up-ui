@@ -86,6 +86,67 @@ const DocsHub = () => {
                         </SyntaxHighlighter>
                     </div>
 
+                    <h3 className='font-bold text-lg mt-8'>Paginación</h3>
+                    <p className='font-farro-light text-gray-700'>Para obtener una cantidad específica de datos, puedes utilizar la paginación. Por defecto, la paginación es de 10 elementos por página.</p>
+                    <div className='pb-2'>
+                        <h4 className='font-bold text-lg mt-4'>Página y limete</h4>
+                        <p className='font-farro-light text-gray-700'>
+                            La API puede recibir dos parámetros para la paginación: <span className='font-bold text-gray-900'>PAGE</span> indica el número de página y <span className='font-bold text-gray-900'>LIMIT</span> indica la cantidad de elementos por página. si no añades estos parámetros, la API devolverá los primeros 10 elementos.
+                        </p>
+                    </div>
+                    <div className="bg-zinc-800 text-white p-4 border rounded-lg overflow-auto">
+                        <div className="flex gap-4 pb-2 border-b border-gray-700">
+                            <h4 className="text-green-400">GET</h4>
+                            <p className="text-sm my-auto">https://www.graduadosup-api.com/api/graduates</p>
+                        </div>
+                        <SyntaxHighlighter language="json" style={materialDark}>
+                         {jsonResponse}
+                        </SyntaxHighlighter>
+                    </div>
+                </section>
+            </section>
+
+            <section id='Endpoints' className="my-16">
+                <h2 className="text-3xl my-2 font-semibold">Endpoints</h2>
+                <p className='text-gray-800'>A continuación se muestran los diferentes endpoints disponibles en la RESTful API de Graduados UP</p>
+
+                <section>
+                    <h3 className="text-lg font-semibold mt-8">Graduates</h3>
+                    <p className='my-2 font-farro-light text-gray-700'>Muestra toda la cantidad de graduados</p>
+                    <div className="bg-zinc-800 text-white p-4 border rounded-lg overflow-auto">
+                        <div className="flex gap-4 pb-2 border-b border-gray-700">
+                            <h4 className="text-green-400">GET</h4>
+                            <p className="text-sm my-auto">https://www.graduadosup-api.com/api/graduates</p>
+                        </div>
+                        <SyntaxHighlighter language="json" style={materialDark}>
+                         {jsonResponse}
+                        </SyntaxHighlighter>
+                    </div>
+
+                    <h3 className="text-lg font-semibold mt-8">Faculties</h3>
+                    <p className='my-2 font-farro-light text-gray-700'>Muestra toda la cantidad de graduados por facultad</p>
+                    <div className="bg-zinc-800 text-white p-4 border rounded-lg overflow-auto">
+                        <div className="flex gap-4 pb-2 border-b border-gray-700">
+                            <h4 className="text-green-400">GET</h4>
+                            <p className="text-sm my-auto">https://www.graduadosup-api.com/api/faculties</p>
+                        </div>
+                        <SyntaxHighlighter language="json" style={materialDark}>
+                         {jsonResponse}
+                        </SyntaxHighlighter>
+                    </div>
+
+                    <h3 className="text-lg font-semibold mt-8">Careers</h3>
+                    <p className='my-2 font-farro-light text-gray-700'>Muestra toda la cantidad de graduados por carrera</p>
+                    <div className="bg-zinc-800 text-white p-4 border rounded-lg overflow-auto">
+                        <div className="flex gap-4 pb-2 border-b border-gray-700">
+                            <h4 className="text-green-400">GET</h4>
+                            <p
+                                className="text-sm my-auto">https://www.graduadosup-api.com/api/careers</p>
+                        </div>
+                        <SyntaxHighlighter language="json" style={materialDark}>
+                         {jsonResponse}
+                        </SyntaxHighlighter>
+                    </div>
                 </section>
             </section>
         </main>
