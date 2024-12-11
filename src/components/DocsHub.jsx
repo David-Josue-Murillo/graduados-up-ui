@@ -112,7 +112,10 @@ const DocsHub = () => {
 
                 <section>
                     <h3 className="text-lg font-semibold mt-8">Graduates</h3>
-                    <p className='my-2 font-farro-light text-gray-700'>Muestra toda la cantidad de graduados</p>
+                    <p className='my-2 font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023. </p>
+
+                    <h4 className='text-lg font-semibold mt-8'>Obtener todos los graduados</h4>
+                    <p className='my-2 font-farro-light text-gray-700'>Puedes obtener acceso a la lista de graduados utilizando el endpoint <span className='text-gray-900 font-bold'>/graduates</span></p>
                     <div className="bg-zinc-800 text-white p-4 border rounded-lg overflow-auto">
                         <div className="flex gap-4 pb-2 border-b border-gray-700">
                             <h4 className="text-green-400">GET</h4>
@@ -121,32 +124,7 @@ const DocsHub = () => {
                         <SyntaxHighlighter language="json" style={materialDark}>
                          {jsonResponse}
                         </SyntaxHighlighter>
-                    </div>
-
-                    <h3 className="text-lg font-semibold mt-8">Faculties</h3>
-                    <p className='my-2 font-farro-light text-gray-700'>Muestra toda la cantidad de graduados por facultad</p>
-                    <div className="bg-zinc-800 text-white p-4 border rounded-lg overflow-auto">
-                        <div className="flex gap-4 pb-2 border-b border-gray-700">
-                            <h4 className="text-green-400">GET</h4>
-                            <p className="text-sm my-auto">https://www.graduadosup-api.com/api/faculties</p>
-                        </div>
-                        <SyntaxHighlighter language="json" style={materialDark}>
-                         {jsonResponse}
-                        </SyntaxHighlighter>
-                    </div>
-
-                    <h3 className="text-lg font-semibold mt-8">Careers</h3>
-                    <p className='my-2 font-farro-light text-gray-700'>Muestra toda la cantidad de graduados por carrera</p>
-                    <div className="bg-zinc-800 text-white p-4 border rounded-lg overflow-auto">
-                        <div className="flex gap-4 pb-2 border-b border-gray-700">
-                            <h4 className="text-green-400">GET</h4>
-                            <p
-                                className="text-sm my-auto">https://www.graduadosup-api.com/api/careers</p>
-                        </div>
-                        <SyntaxHighlighter language="json" style={materialDark}>
-                         {jsonResponse}
-                        </SyntaxHighlighter>
-                    </div>
+                    </div>                
                 </section>
             </section>
         </main>
