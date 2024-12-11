@@ -1,0 +1,24 @@
+{
+    "message": "Datos obtenidos exitosamente",
+    "data": [
+      {
+        "id": 1,
+        "quantity": 150,
+        "year": 2023,
+        "campus": {
+          "id": 1,
+          "name": "Centro Regional Universitario de Veraguas"
+        },
+        "career": {
+          "id": 2,
+          "name": "Ingeniería en Sistemas",
+          "faculty": {
+            "id": 1,
+            "name": "Facultad de Informática, Electrónica y Comunicación"
+          }
+        }
+      }
+    ],
+    "status": 200,
+    "errors": []
+  }
