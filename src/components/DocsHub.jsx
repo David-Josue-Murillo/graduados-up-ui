@@ -13,39 +13,45 @@ const DocsHub = () => {
     ];
 
     return (
-        <main className="md:w-8/12" data-aos="fade-up">
+        <main className="md:w-8/12" data-aos="fade-up" aria-labelledby='page-title'>
             <section>
                 <SectionHeader
-                    id="Introduccion"
+                    id="introduccion"
                     title="Introducción"
                     description="¡Bienvenido a la documentación de Graduados UP! Esta página te dará una introducción sobre que trata esta RESTful API."
                 />
-                <section>
-                    <h3 className="text-lg font-medium mt-8">¿Qué es Graduados UP?</h3>
-                    <p className="font-farro-light text-gray-700">
+
+                <article>
+                    <h2 className="text-lg font-medium mt-8" id="about-graduados-up">¿Qué es Graduados UP?</h2>
+                    <p className="font-farro-light text-gray-700" aria-describedby="about-graduados-up">
                         Graduados UP es un proyecto que busca facilitar la gestión de graduados de la Universidad del Pacífico...
                     </p>
-                </section>
-                <section className='bg-gray-100 mx-4 my-8 p-8 rounded-3xl border border-gray-300'>
-                    <h4 className="text-lg font-medium pb-2">¿Qué datos puedes ver?</h4>
-                    <ul className="text-gray-800 font-farro-light text-sm space-y-2 list-disc pl-5">
-                        <li>Cantidad de estudiantes graduados por año.</li>
-                        <li>Relaciones entre campus, carreras y facultades.</li>
-                        <li>Detalles sobre programas académicos y facultades asociadas.</li>
-                        <li>Historial de graduados en diferentes campus.</li>
+                </article>
+
+                <article className='bg-gray-100 mx-4 my-8 p-8 rounded-3xl border border-gray-300' aria-labelledby="datos-disponibles">
+                    <h3 className="text-lg font-medium pb-2" id="datos-disponibles">¿Qué datos puedes ver?</h3>
+                    <ul className="text-gray-800 font-farro-light text-sm space-y-2 list-disc pl-5" aria-describedby="datos-disponibles">
+                        {[
+                            "Cantidad de estudiantes graduados por año",
+                            "Relaciones entre campus, carreras y facultades",
+                            "Detalles sobre programas académicos y facultades asociadas",
+                            "Historial de graduados en diferentes campus"
+                        ].map((item, index) => (
+                            <li key={index}>{item}</li>
+                        ))}
                     </ul>
-                </section>
+                </article>
             </section>
 
-            <section className="my-16">
+            <section className="my-16" aria-labelledby="getting-started">
                 <SectionHeader
-                    id="Empezar"
+                    id="empezar"
                     title="Empezar"
                     description="Para empezar a utilizar la RESTful API de Graduados UP, debes de conocer las distintas rutas."
                 />
 
-                <h3 className="text-lg font-semibold mt-8">Rutas</h3>
-                <ul className="text-gray-600 text-sm space-y-2 list-disc pl-8">
+                <h2 className="text-lg font-semibold mt-8" id="available-routes">Rutas Disponibles</h2>
+                <ul className="text-gray-600 text-sm space-y-2 list-disc pl-8" aria-describedby="available-routes">
                     {routes.map((route) => (
                         <li key={route.resource}>
                             <span className="font-bold text-black border-b-2 border-b-green-400">{route.resource}: </span>
@@ -54,46 +60,49 @@ const DocsHub = () => {
                     ))}
                 </ul>
 
-                <h3 className='font-bold text-lg mt-8'>Response</h3>
-                <SyntaxBlock method="GET" url="https://www.graduadosup-api.com/api/graduates" response={JSON.stringify(graduateAllResponse, null, 2)} />
-                
-                <section>
-                    <h3 className='font-bold text-lg mt-8'>Paginación</h3>
-                    <p className='font-farro-light text-gray-700'>Para obtener una cantidad específica de datos, puedes utilizar la paginación. Por defecto, la paginación es de 10 elementos por página.</p>
-                    <div className='pb-2'>
-                        <h4 className='font-bold text-lg mt-4'>Página y limete</h4>
-                        <p className='font-farro-light text-gray-700'>
-                            La API puede recibir dos parámetros para la paginación: <span className='font-bold text-gray-900'>PAGE</span> indica el número de página y <span className='font-bold text-gray-900'>LIMIT</span> indica la cantidad de elementos por página. si no añades estos parámetros, la API devolverá los primeros 10 elementos.
-                        </p>
-                    </div>
-                    <div className="bg-zinc-800 text-white p-4 border rounded-lg overflow-auto">
-                        <div className="flex gap-4 pb-2 border-b border-gray-700">
-                            <h4 className="text-green-400">GET</h4>
-                            <p className="text-sm my-auto">https://www.graduadosup-api.com/api/graduates</p>
-                        </div>
+                <h2 className='font-bold text-lg mt-8' id='json-response-all-graduates'>Response</h2>
+                <SyntaxBlock
+                    method="GET"
+                    url="https://www.graduadosup-api.com/api/graduates"
+                    response={JSON.stringify(graduateAllResponse, null, 2)}
+                />
 
-                    </div>
-                </section>
+                <h2 className='font-bold text-lg mt-8' id='paginacion'>Paginación</h2>
+                <p className='font-farro-light text-gray-700'>Para obtener una cantidad específica de datos, puedes utilizar la paginación. Por defecto, la paginación es de 10 elementos por página.</p>
+                <div className='pb-2'>
+                    <h3 className='font-bold text-lg mt-4'>Página y límite</h3>
+                    <p className='font-farro-light text-gray-700'>
+                        La API puede recibir dos parámetros para la paginación: <span className='font-bold text-gray-900'>PAGE</span> indica el número de página y <span className='font-bold text-gray-900'>LIMIT</span> indica la cantidad de elementos por página. Si no añades estos parámetros, la API devolverá los primeros 10 elementos.
+                    </p>
+                </div>
+
+                <SyntaxBlock
+                    method="GET"
+                    url="https://www.graduadosup-api.com/api/graduates"
+                    response={JSON.stringify(graduateAllResponse, null, 2)}
+                />
             </section>
 
-            <section id='Endpoints' className="my-16">
-                <h2 className="text-3xl my-2 font-semibold">Endpoints</h2>
-                <p className='text-gray-800'>A continuación se muestran los diferentes endpoints disponibles en la RESTful API de Graduados UP</p>
+            <section className="my-16" aria-labelledby="endpoints">
+                <SectionHeader
+                    id="endpoints"
+                    title="Endpoints"
+                    description="A continuación se muestran los diferentes endpoints disponibles en la RESTful API de Graduados UP"
+                />
 
-                <section>
-                    <h3 className="text-lg font-semibold mt-8">Graduates</h3>
-                    <p className='my-2 font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023. </p>
+                <h2 className="text-lg font-semibold mt-8" id="graduates">Graduates</h2>
+                <p className='font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023.</p>
 
-                    <h4 className='text-lg font-semibold mt-8'>Obtener todos los graduados</h4>
-                    <p className='my-2 font-farro-light text-gray-700'>Puedes obtener acceso a la lista de graduados utilizando el endpoint <span className='text-gray-900 font-bold'>/graduates</span></p>
-                    <div className="bg-zinc-800 text-white p-4 border rounded-lg overflow-auto">
-                        <div className="flex gap-4 pb-2 border-b border-gray-700">
-                            <h4 className="text-green-400">GET</h4>
-                            <p className="text-sm my-auto">https://www.graduadosup-api.com/api/graduates</p>
-                        </div>
+                <div className='pb-2'>
+                    <h3 className='text-lg font-semibold mt-8'>Obtener todos los graduados</h3>
+                    <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de graduados utilizando el endpoint <span className='text-gray-900 font-bold'>/graduates</span></p>
+                </div>
 
-                    </div>
-                </section>
+                <SyntaxBlock
+                    method="GET"
+                    url="https://www.graduadosup-api.com/api/graduates"
+                    response={JSON.stringify(graduateAllResponse, null, 2)}
+                />
             </section>
         </main>
     )
