@@ -24,7 +24,7 @@ const DocsHub = () => {
                 <article>
                     <h2 className="text-lg font-medium mt-8" id="about-graduados-up">¿Qué es Graduados UP?</h2>
                     <p className="font-farro-light text-gray-700" aria-describedby="about-graduados-up">
-                        Graduados UP es un proyecto que busca facilitar la gestión de graduados de la Universidad del Pacífico...
+                        Graduados UP es un proyecto que busca facilitar la gestión de graduados de la Universidad del Pacífico, proporcionando una API que permite acceder a datos detallados sobre los graduados, sus facultades, carreras y campus.
                     </p>
                 </article>
 
@@ -49,6 +49,13 @@ const DocsHub = () => {
                     title="Empezar"
                     description="Para empezar a utilizar la RESTful API de Graduados UP, debes de conocer las distintas rutas."
                 />
+
+                <h2 className="text-lg font-semibold mt-8" id="available-routes">
+                    URL Base: &nbsp;
+                    <span className='font-farro-light font-bold text-black border-b-2 border-b-green-400'>
+                        https://www.graduadosup-api.com/api
+                    </span>
+                </h2>
 
                 <h2 className="text-lg font-semibold mt-8" id="available-routes">Rutas Disponibles</h2>
                 <ul className="text-gray-600 text-sm space-y-2 list-disc pl-8" aria-describedby="available-routes">
@@ -90,19 +97,47 @@ const DocsHub = () => {
                     description="A continuación se muestran los diferentes endpoints disponibles en la RESTful API de Graduados UP"
                 />
 
-                <h2 className="text-lg font-semibold mt-8" id="graduates">Graduates</h2>
-                <p className='font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023.</p>
+                <section id="graduates">
+                    <h2 className="text-lg font-semibold mt-8">Graduates</h2>
+                    <p className='font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023.</p>
 
-                <div className='pb-2'>
-                    <h3 className='text-lg font-semibold mt-8'>Obtener todos los graduados</h3>
-                    <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de graduados utilizando el endpoint <span className='text-gray-900 font-bold'>/graduates</span></p>
-                </div>
+                    <article>
+                        <div className='pb-2'>
+                            <h3 className='text-lg font-semibold mt-8'>Obtener todos los graduados</h3>
+                            <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de graduados utilizando el endpoint <span className='text-gray-900 font-bold'>/graduates</span></p>
+                        </div>
 
-                <SyntaxBlock
-                    method="GET"
-                    url="https://www.graduadosup-api.com/api/graduates"
-                    response={JSON.stringify(graduateAllResponse, null, 2)}
-                />
+                        <SyntaxBlock
+                            method="GET"
+                            url="https://www.graduadosup-api.com/api/graduates"
+                            response={JSON.stringify(graduateAllResponse, null, 2)}
+                        />
+                    </article>
+
+                    <article className='mt-16'>
+                        <div className='pb-2'>
+                            <h3 className='text-lg font-semibold mt-8'>Obtener un dato en específico</h3>
+                            <p className='font-farro-light text-gray-700'>
+                                Puedes obtener acceso a un único dato de la lista de graduados agregando un id como un parámetro, utilizando el endpoint
+                                <span className='text-gray-900 font-bold'> /graduates/1</span>
+                            </p>
+                            
+                            <p className='font-farro-light text-gray-700 mt-4'>
+                                También puedes obtener un dato en específico filtrando a través de los siguientes parametros: 
+                            </p>
+
+                            <ul className="text-gray-600 text-sm space-y-2 list-disc pl-8 mt-2" aria-describedby="available-routes">
+                                {[
+                                    ['Año', 'year', '2023'],
+                                    ['Carrera', 'career_id', 'Ingeniería en Informática'],
+                                    ['Campus', 'campus_id', 'Campus Central'],
+                                ].map((item, index) => (
+                                    <li key={index}>{item[0]} <span className='text-gray-900 font-bold'>(/graduates?{item[1]}={item[2]})</span></li>
+                                ))}
+                            </ul>
+                        </div>
+                    </article>
+                </section>
             </section>
         </main>
     )
