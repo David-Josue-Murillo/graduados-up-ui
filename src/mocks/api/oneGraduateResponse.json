@@ -1,0 +1,38 @@
+{
+    "message": "Dato obtenido exitosamente",
+    "data": {
+        "id": 2,
+        "quantity": 80,
+        "year": 2024,
+        "campus": {
+            "id": 1,
+            "name": "Centro Regional Universitario de Veraguas",
+            "graduates": {
+                "total_graduates": 1014,
+                "by_year": {
+                    "2024": {
+                        "quantity": 80
+                    },
+                    "2019": {
+                        "quantity": 124
+                    },
+                    "2018": {
+                        "quantity": 12
+                    }
+                }
+            }
+        },
+        "career": {
+            "id": 15,
+            "name": "Licenciatura en Informática para la Gestión Educativa y Empresarial",
+            "faculty": {
+                "id": 15,
+                "name": "Facultad en Informática, Electrónica y Comunicación",
+                "total_careers": 5
+            },
+            "total_graduates": 180
+        }
+    },
+    "status": 200,
+    "errors": []
+}
