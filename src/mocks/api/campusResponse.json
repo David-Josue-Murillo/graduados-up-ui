@@ -3,7 +3,7 @@
     "data": [
         {
             "id": 1,
-            "name": "Vernicefurt",
+            "name": "Centro Regional Universitario de Bocas del Toro",
             "graduates": {
                 "total_graduates": 1014,
                 "by_year": {
@@ -21,7 +21,7 @@
         },
         {
             "id": 2,
-            "name": "Port Isabell",
+            "name": "Centro Regional Universitario de Coclé",
             "graduates": {
                 "total_graduates": 625,
                 "by_year": {
