@@ -1,0 +1,17 @@
+{
+    "message": "Facultades encontradas exitosamente",
+    "data": [
+        {
+            "id": 1,
+            "name": "Facultad de Arquitectura y Diseño",
+            "total_careers": 7
+        },
+        {
+            "id": 2,
+            "name": "Facultad de Economía",
+            "total_careers": 14
+        }
+    ],
+    "status": 200,
+    "errors": []
+}
