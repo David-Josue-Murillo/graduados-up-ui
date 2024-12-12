@@ -98,7 +98,7 @@ const DocsHub = () => {
                 <SectionHeader
                     id="endpoints"
                     title="Endpoints"
-                    description="A continuación se muestran los diferentes endpoints disponibles en la RESTful API de Graduados UP"
+                    description="A continuación se muestran los diferentes endpoints disponibles en la RESTful API de Graduados UP y cómo puedes acceder a ellos. Puedes obtener información detallada sobre graduados, facultades, carreras y campus. Cada endpoint tiene una descripción detallada de cómo acceder a los datos."
                 />
 
                 <section id="graduates">
@@ -108,7 +108,7 @@ const DocsHub = () => {
                     <article>
                         <div className='pb-2'>
                             <h3 className='text-lg font-semibold mt-8'>Obtener todos los graduados</h3>
-                            <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de graduados utilizando el endpoint <span className='text-gray-900 font-bold'>/graduates</span></p>
+                            <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de graduados utilizando el endpoint <span className='text-gray-900 font-bold'>/graduates</span> . Retornara toda la cantidad de estudiantes que se han graduados por año, campus y carrera.</p>
                         </div>
 
                         <SyntaxBlock
@@ -150,7 +150,7 @@ const DocsHub = () => {
                     <article>
                         <div className='pb-2'>
                             <h3 className='text-lg font-semibold mt-8'>Obtener toda la cantidad de estudiante graduados por carrera</h3>
-                            <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de carreras utilizando el endpoint <span className='text-gray-900 font-bold'>/carrers</span></p>
+                            <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de carreras utilizando el endpoint <span className='text-gray-900 font-bold'>/carrers</span> . Al realizar la petición, se retornara todos los registros junto con el nombre de la facultad a la cual pertenece la carrera junto a otros datos adicionales.</p>
                         </div>
 
                         <SyntaxBlock
@@ -165,40 +165,30 @@ const DocsHub = () => {
                             <h3 className='text-lg font-semibold mt-8'>Obtener un dato en específico</h3>
                             <p className='font-farro-light text-gray-700'>
                                 Puedes obtener acceso a un único dato de la lista de carreras agregando un id como un parámetro, utilizando el endpoint
-                                <span className='text-gray-900 font-bold'> /graduates/1</span>
+                                <span className='text-gray-900 font-bold'> /careers/1</span>
                             </p>
                             
                             <p className='font-farro-light text-gray-700 mt-4'>
-                                También puedes obtener un dato en específico filtrando a través de los siguientes parametros: 
+                                Hasta el momento no hay soporte para filtrar por parámetros. Pero ya se está trabajando en ello.
                             </p>
-
-                            <ul className="text-gray-600 text-sm space-y-2 list-disc pl-8 mt-2" aria-describedby="available-routes">
-                                {[
-                                    ['Año', 'year', '2023'],
-                                    ['Carrera', 'career_id', 'Ingeniería en Informática'],
-                                    ['Campus', 'campus_id', 'Campus Central'],
-                                ].map((item, index) => (
-                                    <li key={index}>{item[0]} <span className='text-gray-900 font-bold'>(/graduates?{item[1]}={item[2]})</span></li>
-                                ))}
-                            </ul>
                         </div>
                     </article>
                 </section>
 
-                <section id="graduates">
-                    <h2 className="text-lg font-semibold mt-16">Graduates</h2>
-                    <p className='font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023.</p>
+                <section id="faculty">
+                    <h2 className="text-2xl font-semibold mt-16">Faculty</h2>
+                    <p className='font-farro-light text-gray-700'>Actualmente, la universidad está organizada en 19 facultades. Sin embargo, es importante destacar que la distribución de estas facultades y las carreras que ofrecen pueden diferir entre los distintos campus</p>
 
                     <article>
                         <div className='pb-2'>
                             <h3 className='text-lg font-semibold mt-8'>Obtener todos los graduados</h3>
-                            <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de graduados utilizando el endpoint <span className='text-gray-900 font-bold'>/graduates</span></p>
+                            <p className='font-farro-light text-gray-700'>Accede a la lista completa de facultades disponibles a través del endpoint <span className='text-gray-900 font-bold'>/faculties</span> . Este recurso te proporcionará información detallada sobre cada facultad.</p>
                         </div>
 
                         <SyntaxBlock
                             method="GET"
                             url="https://www.graduadosup-api.com/api/graduates"
-                            response={JSON.stringify(graduateAllResponse, null, 2)}
+                            response={JSON.stringify(facultyResponse, null, 2)}
                         />
                     </article>
 
@@ -227,49 +217,7 @@ const DocsHub = () => {
                     </article>
                 </section>
 
-                <section id="graduates">
-                    <h2 className="text-lg font-semibold mt-16">Graduates</h2>
-                    <p className='font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023.</p>
-
-                    <article>
-                        <div className='pb-2'>
-                            <h3 className='text-lg font-semibold mt-8'>Obtener todos los graduados</h3>
-                            <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de graduados utilizando el endpoint <span className='text-gray-900 font-bold'>/graduates</span></p>
-                        </div>
-
-                        <SyntaxBlock
-                            method="GET"
-                            url="https://www.graduadosup-api.com/api/graduates"
-                            response={JSON.stringify(graduateAllResponse, null, 2)}
-                        />
-                    </article>
-
-                    <article className='mt-16'>
-                        <div className='pb-2'>
-                            <h3 className='text-lg font-semibold mt-8'>Obtener un dato en específico</h3>
-                            <p className='font-farro-light text-gray-700'>
-                                Puedes obtener acceso a un único dato de la lista de graduados agregando un id como un parámetro, utilizando el endpoint
-                                <span className='text-gray-900 font-bold'> /graduates/1</span>
-                            </p>
-                            
-                            <p className='font-farro-light text-gray-700 mt-4'>
-                                También puedes obtener un dato en específico filtrando a través de los siguientes parametros: 
-                            </p>
-
-                            <ul className="text-gray-600 text-sm space-y-2 list-disc pl-8 mt-2" aria-describedby="available-routes">
-                                {[
-                                    ['Año', 'year', '2023'],
-                                    ['Carrera', 'career_id', 'Ingeniería en Informática'],
-                                    ['Campus', 'campus_id', 'Campus Central'],
-                                ].map((item, index) => (
-                                    <li key={index}>{item[0]} <span className='text-gray-900 font-bold'>(/graduates?{item[1]}={item[2]})</span></li>
-                                ))}
-                            </ul>
-                        </div>
-                    </article>
-                </section>
-
-                <section id="graduates">
+                <section id="campus">
                     <h2 className="text-lg font-semibold mt-16">Graduates</h2>
                     <p className='font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023.</p>
 
