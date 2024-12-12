@@ -2,6 +2,10 @@ import React from 'react'
 import SyntaxBlock from './SyntaxBlock';
 import SectionHeader from './SectionHeader';
 import graduateAllResponse from '../mocks/api/graduatesResponse.json'
+import campusResponse from '../mocks/api/campusResponse.json'
+import facultyResponse from '../mocks/api/facultyResponse.json'
+import careersResponse from '../mocks/api/careersResponse.json'
+import oneGraduateResponse from '../mocks/api/oneGraduateResponse.json'
 
 
 const DocsHub = () => {
@@ -98,12 +102,12 @@ const DocsHub = () => {
                 />
 
                 <section id="graduates">
-                    <h2 className="text-lg font-semibold mt-8">Graduates</h2>
+                    <h2 className="text-2xl font-semibold mt-16">Graduates</h2>
                     <p className='font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023.</p>
 
                     <article>
                         <div className='pb-2'>
-                            <h3 className='text-base font-semibold mt-8'>Obtener todos los graduados</h3>
+                            <h3 className='text-lg font-semibold mt-8'>Obtener todos los graduados</h3>
                             <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de graduados utilizando el endpoint <span className='text-gray-900 font-bold'>/graduates</span></p>
                         </div>
 
@@ -140,19 +144,19 @@ const DocsHub = () => {
                 </section>
 
                 <section id="careers">
-                    <h2 className="text-lg font-semibold mt-8">Careers</h2>
+                    <h2 className="text-2xl font-semibold mt-16">Careers</h2>
                     <p className='font-farro-light text-gray-700'>La Universidad de Panamá ofrece una amplia variedad de carreras para sus estudiantes. Cuenta con un alrededor de 171 carreras en diferentes áreas.</p>
 
                     <article>
                         <div className='pb-2'>
-                            <h3 className='text-base font-semibold mt-8'>Obtener toda la cantidad de estudiante graduados por carrera</h3>
+                            <h3 className='text-lg font-semibold mt-8'>Obtener toda la cantidad de estudiante graduados por carrera</h3>
                             <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de carreras utilizando el endpoint <span className='text-gray-900 font-bold'>/carrers</span></p>
                         </div>
 
                         <SyntaxBlock
                             method="GET"
-                            url="https://www.graduadosup-api.com/api/graduates"
-                            response={JSON.stringify(graduateAllResponse, null, 2)}
+                            url="https://www.graduadosup-api.com/api/careers"
+                            response={JSON.stringify(careersResponse, null, 2)}
                         />
                     </article>
 
@@ -182,7 +186,7 @@ const DocsHub = () => {
                 </section>
 
                 <section id="graduates">
-                    <h2 className="text-lg font-semibold mt-8">Graduates</h2>
+                    <h2 className="text-lg font-semibold mt-16">Graduates</h2>
                     <p className='font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023.</p>
 
                     <article>
@@ -224,7 +228,7 @@ const DocsHub = () => {
                 </section>
 
                 <section id="graduates">
-                    <h2 className="text-lg font-semibold mt-8">Graduates</h2>
+                    <h2 className="text-lg font-semibold mt-16">Graduates</h2>
                     <p className='font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023.</p>
 
                     <article>
@@ -266,7 +270,7 @@ const DocsHub = () => {
                 </section>
 
                 <section id="graduates">
-                    <h2 className="text-lg font-semibold mt-8">Graduates</h2>
+                    <h2 className="text-lg font-semibold mt-16">Graduates</h2>
                     <p className='font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023.</p>
 
                     <article>
