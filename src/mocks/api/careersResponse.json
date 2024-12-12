@@ -1,0 +1,27 @@
+{
+    "message": "Carreras encontradas exitosamente",
+    "data": [
+        {
+            "id": 1,
+            "name": "Lic. en Contabilidad",
+            "faculty": {
+                "id": 1,
+                "name": "Facultad de Administración de Empresas y Contabilidad",
+                "total_careers": 16
+            },
+            "total_graduates": 3452
+        },
+        {
+            "id": 2,
+            "name": "Lic. Administración Pública",
+            "faculty": {
+                "id": 4,
+                "name": "Facultad de Administración de Pública",
+                "total_careers": 8
+            },
+            "total_graduates": 1780
+        }
+    ],
+    "status": 200,
+    "errors": []
+}

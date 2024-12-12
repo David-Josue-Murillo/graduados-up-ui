@@ -1,0 +1,43 @@
+{
+    "message": "Campus encontrados con éxitos",
+    "data": [
+        {
+            "id": 1,
+            "name": "Vernicefurt",
+            "graduates": {
+                "total_graduates": 1014,
+                "by_year": {
+                    "1992": {
+                        "quantity": 106
+                    },
+                    "2024": {
+                        "quantity": 80
+                    },
+                    "1976": {
+                        "quantity": 86
+                    }
+                }
+            }
+        },
+        {
+            "id": 2,
+            "name": "Port Isabell",
+            "graduates": {
+                "total_graduates": 625,
+                "by_year": {
+                    "1996": {
+                        "quantity": 27
+                    },
+                    "2004": {
+                        "quantity": 58
+                    },
+                    "2012": {
+                        "quantity": 141
+                    }
+                }
+            }
+        }
+    ],
+    "status": 200,
+    "errors": []
+}
