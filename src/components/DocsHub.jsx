@@ -125,9 +125,9 @@ const DocsHub = () => {
                                 Puedes obtener acceso a un único dato de la lista de graduados agregando un id como un parámetro, utilizando el endpoint
                                 <span className='text-gray-900 font-bold'> /graduates/1</span>
                             </p>
-                            
+
                             <p className='font-farro-light text-gray-700 mt-4'>
-                                También puedes obtener un dato en específico filtrando a través de los siguientes parametros: 
+                                También puedes obtener un dato en específico filtrando a través de los siguientes parametros:
                             </p>
 
                             <ul className="text-gray-600 text-sm space-y-2 list-disc pl-8 mt-2" aria-describedby="available-routes">
@@ -167,7 +167,7 @@ const DocsHub = () => {
                                 Puedes obtener acceso a un único dato de la lista de carreras agregando un id como un parámetro, utilizando el endpoint
                                 <span className='text-gray-900 font-bold'> /careers/1</span>
                             </p>
-                            
+
                             <p className='font-farro-light text-gray-700 mt-4'>
                                 Hasta el momento no hay soporte para filtrar por parámetros. Pero ya se está trabajando en ello.
                             </p>
@@ -187,7 +187,7 @@ const DocsHub = () => {
 
                         <SyntaxBlock
                             method="GET"
-                            url="https://www.graduadosup-api.com/api/graduates"
+                            url="https://www.graduadosup-api.com/api/faculties"
                             response={JSON.stringify(facultyResponse, null, 2)}
                         />
                     </article>
@@ -199,28 +199,29 @@ const DocsHub = () => {
                                 Puedes obtener acceso a un único dato de la lista de facultades agregando un id como un parámetro, utilizando el endpoint
                                 <span className='text-gray-900 font-bold'> /graduates/1</span>
                             </p>
-                            
+
                             <p className='font-farro-light text-gray-700 mt-4'>
-                                Utilizando el endpoint <span className='text-gray-900 font-bold'> /graduates/1/career</span> , podrás obtener un listado detallado de las carreras que han cursado los egresados de una facultad en particular.   
+                                Utilizando el endpoint <span className='text-gray-900 font-bold'> /graduates/1/career</span> , podrás obtener un listado detallado de las carreras que han cursado los egresados de una facultad en particular.
                             </p>
                         </div>
                     </article>
                 </section>
 
                 <section id="campus">
-                    <h2 className="text-lg font-semibold mt-16">Campus</h2>
-                    <p className='font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023.</p>
+                    <h2 className="text-2xl font-semibold mt-16">Campus</h2>
+                    <p className='font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene varios campus, entre ellos los centros regionales y extensiones en Azuero, Bocas del Toro, Coclé, Colón, Darién, Los Santos, Panamá Este, Panamá Oeste, San Miguelito y Veraguas.
+                    </p>
 
                     <article>
                         <div className='pb-2'>
-                            <h3 className='text-lg font-semibold mt-8'>Obtener todos los graduados</h3>
-                            <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de graduados utilizando el endpoint <span className='text-gray-900 font-bold'>/graduates</span></p>
+                            <h3 className='text-lg font-semibold mt-8'>Obtener toda la cantidad de graduados por campus (Centro regionales y extensiones)</h3>
+                            <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de graduados utilizando el endpoint <span className='text-gray-900 font-bold'>/campus</span> . Este recurso te permite conocer el número total de egresados de todas las facultades a lo largo de los años</p>
                         </div>
 
                         <SyntaxBlock
                             method="GET"
-                            url="https://www.graduadosup-api.com/api/graduates"
-                            response={JSON.stringify(graduateAllResponse, null, 2)}
+                            url="https://www.graduadosup-api.com/api/campus"
+                            response={JSON.stringify(campusResponse, null, 2)}
                         />
                     </article>
 
@@ -228,23 +229,13 @@ const DocsHub = () => {
                         <div className='pb-2'>
                             <h3 className='text-lg font-semibold mt-8'>Obtener un dato en específico</h3>
                             <p className='font-farro-light text-gray-700'>
-                                Puedes obtener acceso a un único dato de la lista de graduados agregando un id como un parámetro, utilizando el endpoint
-                                <span className='text-gray-900 font-bold'> /graduates/1</span>
-                            </p>
-                            
-                            <p className='font-farro-light text-gray-700 mt-4'>
-                                También puedes obtener un dato en específico filtrando a través de los siguientes parametros: 
+                                Puedes obtener acceso a un único dato de la lista de campus agregando un id como un parámetro, utilizando el endpoint
+                                <span className='text-gray-900 font-bold'> /campus/1</span>
                             </p>
 
-                            <ul className="text-gray-600 text-sm space-y-2 list-disc pl-8 mt-2" aria-describedby="available-routes">
-                                {[
-                                    ['Año', 'year', '2023'],
-                                    ['Carrera', 'career_id', 'Ingeniería en Informática'],
-                                    ['Campus', 'campus_id', 'Campus Central'],
-                                ].map((item, index) => (
-                                    <li key={index}>{item[0]} <span className='text-gray-900 font-bold'>(/graduates?{item[1]}={item[2]})</span></li>
-                                ))}
-                            </ul>
+                            <p className='font-farro-light text-gray-700 mt-4'>
+                                Hasta el momento no hay soporte para filtrar por parámetros. Pero ya se está trabajando en ello.
+                            </p>
                         </div>
                     </article>
                 </section>
@@ -254,3 +245,4 @@ const DocsHub = () => {
 }
 
 export default DocsHub
+
