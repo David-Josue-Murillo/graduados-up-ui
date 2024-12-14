@@ -16,6 +16,12 @@ const DocsHub = () => {
         { resource: "Campus", description: "Muestra toda la cantidad de graduados por campus" },
     ];
 
+    const filtersGraduates = [
+        ['Año', 'year', '2023'],
+        ['Carrera', 'career_id', 'Ingeniería en Informática'],
+        ['Campus', 'campus_id', 'Campus Central'],
+    ];
+
     return (
         <main className="md:w-8/12" data-aos="fade-up" aria-labelledby='page-title'>
             <section>
@@ -118,30 +124,12 @@ const DocsHub = () => {
                         />
                     </article>
 
-                    < InfoRespComponent />
-                    <article className='mt-16'>
-                        <div className='pb-2'>
-                            <h3 className='text-lg font-semibold mt-8'>Obtener un dato en específico</h3>
-                            <p className='font-farro-light text-gray-700'>
-                                Puedes obtener acceso a un único dato de la lista de graduados agregando un id como un parámetro, utilizando el endpoint
-                                <span className='text-gray-900 font-bold'> /graduates/1</span>
-                            </p>
-
-                            <p className='font-farro-light text-gray-700 mt-4'>
-                                También puedes obtener un dato en específico filtrando a través de los siguientes parametros:
-                            </p>
-
-                            <ul className="text-gray-600 text-sm space-y-2 list-disc pl-8 mt-2" aria-describedby="available-routes">
-                                {[
-                                    ['Año', 'year', '2023'],
-                                    ['Carrera', 'career_id', 'Ingeniería en Informática'],
-                                    ['Campus', 'campus_id', 'Campus Central'],
-                                ].map((item, index) => (
-                                    <li key={index}>{item[0]} <span className='text-gray-900 font-bold'>(/graduates?{item[1]}={item[2]})</span></li>
-                                ))}
-                            </ul>
-                        </div>
-                    </article>
+                    < InfoRespComponent
+                        endpoint={'graduates'}
+                        descriptionEndpoint={'Puedes obtener acceso a un único dato de la lista de graduados agregando un id como un parámetro, utilizando el endpoint'}
+                        descriptionFilter={'También puedes obtener un dato en específico filtrando a través de los siguientes parametros:'}
+                        filter={filtersGraduates}
+                    />
                 </section>
 
                 <section id="careers">
@@ -161,19 +149,11 @@ const DocsHub = () => {
                         />
                     </article>
 
-                    <article className='mt-16'>
-                        <div className='pb-2'>
-                            <h3 className='text-lg font-semibold mt-8'>Obtener un dato en específico</h3>
-                            <p className='font-farro-light text-gray-700'>
-                                Puedes obtener acceso a un único dato de la lista de carreras agregando un id como un parámetro, utilizando el endpoint
-                                <span className='text-gray-900 font-bold'> /careers/1</span>
-                            </p>
-
-                            <p className='font-farro-light text-gray-700 mt-4'>
-                                Hasta el momento no hay soporte para filtrar por parámetros. Pero ya se está trabajando en ello.
-                            </p>
-                        </div>
-                    </article>
+                    < InfoRespComponent
+                        endpoint={'careers'}
+                        descriptionEndpoint={'Puedes obtener acceso a un único dato de la lista de carreras agregando un id como un parámetro, utilizando el endpoint'}
+                        descriptionFilter={'Hasta el momento no hay soporte para filtrar por parámetros. Pero ya se está trabajando en ello.'}
+                    />
                 </section>
 
                 <section id="faculty">
@@ -193,19 +173,11 @@ const DocsHub = () => {
                         />
                     </article>
 
-                    <article className='mt-16'>
-                        <div className='pb-2'>
-                            <h3 className='text-lg font-semibold mt-8'>Obtener un dato en específico</h3>
-                            <p className='font-farro-light text-gray-700'>
-                                Puedes obtener acceso a un único dato de la lista de facultades agregando un id como un parámetro, utilizando el endpoint
-                                <span className='text-gray-900 font-bold'> /graduates/1</span>
-                            </p>
-
-                            <p className='font-farro-light text-gray-700 mt-4'>
-                                Utilizando el endpoint <span className='text-gray-900 font-bold'> /graduates/1/career</span> , podrás obtener un listado detallado de las carreras que han cursado los egresados de una facultad en particular.
-                            </p>
-                        </div>
-                    </article>
+                    < InfoRespComponent
+                        endpoint={'faculties'}
+                        descriptionEndpoint={'Puedes obtener acceso a un único dato de la lista de facultades agregando un id como un parámetro, utilizando el endpoint'}
+                        descriptionFilter={'Utilizando el endpoint /faculties/1/career, podrás obtener un listado detallado de las carreras que han cursado los egresados de una facultad en particular.'}
+                    />
                 </section>
 
                 <section id="campus">
@@ -226,19 +198,11 @@ const DocsHub = () => {
                         />
                     </article>
 
-                    <article className='mt-16'>
-                        <div className='pb-2'>
-                            <h3 className='text-lg font-semibold mt-8'>Obtener un dato en específico</h3>
-                            <p className='font-farro-light text-gray-700'>
-                                Puedes obtener acceso a un único dato de la lista de campus agregando un id como un parámetro, utilizando el endpoint
-                                <span className='text-gray-900 font-bold'> /campus/1</span>
-                            </p>
-
-                            <p className='font-farro-light text-gray-700 mt-4'>
-                                Hasta el momento no hay soporte para filtrar por parámetros. Pero ya se está trabajando en ello.
-                            </p>
-                        </div>
-                    </article>
+                    <InfoRespComponent
+                        endpoint='campus'
+                        descriptionEndpoint='Puedes obtener acceso a un único dato de la lista de campus agregando un id como un parámetro, utilizando el endpoint'
+                        descriptionFilter='Hasta el momento no hay soporte para filtrar por parámetros. Pero ya se está trabajando en ello.'
+                    />
                 </section>
             </section>
         </main>

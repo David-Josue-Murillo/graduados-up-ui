@@ -1,5 +1,5 @@
 
-const InfoRespComponent = ({endpoint, descriptionEndpoint, descriptionFilter, filter = null}) => {
+const InfoRespComponent = ({endpoint = '', descriptionEndpoint = '', descriptionFilter = '', filter = null}) => {
     return (
         <article className='mt-16'>
             <div className='pb-2'>
