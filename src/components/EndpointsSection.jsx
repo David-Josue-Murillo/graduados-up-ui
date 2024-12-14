@@ -25,17 +25,11 @@ const EndpointsSection = () => {
             />
 
             <section id="graduates">
-                <h2 className="text-2xl font-semibold">Graduates</h2>
-                <p className='font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023.</p>
-
-                <div className='mb-8'>
-                    <h3 className='text-lg font-semibold mt-8'>Obtener todos los graduados</h3>
-                    <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de graduados utilizando el endpoint <span className='text-gray-900 font-bold'>/graduates</span> . Retornara toda la cantidad de estudiantes que se han graduados por año, campus y carrera.</p>
-                </div>
-                
                 <InforEndpoint 
                     title={'Graduates'}
                     endpoint={'graduates'}
+                    descriptionTitle={'La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023.'}
+                    descriptionEndpoint={'Retornara toda la cantidad de estudiantes que se han graduados por año, campus y carrera.'}
                 />
 
                 <SyntaxBlock
@@ -53,21 +47,18 @@ const EndpointsSection = () => {
             </section>
 
             <section id="careers">
-                <h2 className="text-2xl font-semibold mt-16">Careers</h2>
-                <p className='font-farro-light text-gray-700'>La Universidad de Panamá ofrece una amplia variedad de carreras para sus estudiantes. Cuenta con un alrededor de 171 carreras en diferentes áreas.</p>
-
-                <article>
-                    <div className='pb-2'>
-                        <h3 className='text-lg font-semibold mt-8'>Obtener toda la cantidad de estudiante graduados por carrera</h3>
-                        <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de carreras utilizando el endpoint <span className='text-gray-900 font-bold'>/carrers</span> . Al realizar la petición, se retornara todos los registros junto con el nombre de la facultad a la cual pertenece la carrera junto a otros datos adicionales.</p>
-                    </div>
-
-                    <SyntaxBlock
-                        method="GET"
-                        url="https://www.graduadosup-api.com/api/careers"
-                        response={JSON.stringify(careersResponse, null, 2)}
-                    />
-                </article>
+                <InforEndpoint 
+                    title={'Careers'}
+                    endpoint={'carrers'}
+                    descriptionTitle={'La Universidad de Panamá ofrece una amplia variedad de carreras para sus estudiantes. Cuenta con un alrededor de 171 carreras en diferentes áreas.'}
+                    descriptionEndpoint={'Al realizar la petición, se retornara todos los registros junto con el nombre de la facultad a la cual pertenece la carrera junto a otros datos adicionales.'}
+                />
+                
+                <SyntaxBlock
+                    method="GET"
+                    url="https://www.graduadosup-api.com/api/careers"
+                    response={JSON.stringify(careersResponse, null, 2)}
+                />
 
                 < InfoRespComponent
                     endpoint={'careers'}

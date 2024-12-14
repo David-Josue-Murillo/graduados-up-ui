@@ -1,7 +1,7 @@
 
 const InfoRespComponent = ({endpoint = '', descriptionEndpoint = '', descriptionFilter = '', filter = null}) => {
     return (
-        <article className='mt-16'>
+        <article className='mt-12'>
             <div className='pb-2'>
                 <h3 className='text-lg font-semibold mt-8'>Obtener un dato en específico</h3>
                 <p className='font-farro-light text-gray-700'>
