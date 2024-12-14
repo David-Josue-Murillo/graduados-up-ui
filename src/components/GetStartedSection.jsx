@@ -1,4 +1,4 @@
-import SectionHeader from './SectionHeader'
+import SectionHeader from './startedComponents/SectionHeader'
 import SyntaxBlock from './SyntaxBlock'
 import graduateResponse from '../mocks/api/graduatesResponse.json'
 

@@ -1,12 +1,6 @@
 import React from 'react'
-import SyntaxBlock from './SyntaxBlock';
-import SectionHeader from './SectionHeader';
-import campusResponse from '../mocks/api/campusResponse.json'
-import facultyResponse from '../mocks/api/facultyResponse.json'
-import careersResponse from '../mocks/api/careersResponse.json'
-import InfoRespComponent from './InfoRespComponent';
+import SectionHeader from './startedComponents/SectionHeader';
 import GetStartedSection from './GetStartedSection';
-import graduateAllResponse from '../mocks/api/graduatesResponse.json'
 
 const DocsHub = () => {
     const filtersGraduates = [

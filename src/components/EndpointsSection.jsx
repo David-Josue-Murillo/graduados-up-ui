@@ -1,4 +1,10 @@
-import React from 'react'
+import SyntaxBlock from './SyntaxBlock';
+import InfoRespComponent from './endpoinstComponents/InfoRespComponent';
+import campusResponse from '../mocks/api/campusResponse.json'
+import facultyResponse from '../mocks/api/facultyResponse.json'
+import careersResponse from '../mocks/api/careersResponse.json'
+import graduateResponse from '../mocks/api/graduatesResponse.json'
+
 
 const EndpointsSection = () => {
     return (
@@ -22,7 +28,7 @@ const EndpointsSection = () => {
                     <SyntaxBlock
                         method="GET"
                         url="https://www.graduadosup-api.com/api/graduates"
-                        response={JSON.stringify(graduateAllResponse, null, 2)}
+                        response={JSON.stringify(graduateResponse, null, 2)}
                     />
                 </article>
 
