@@ -21,6 +21,8 @@ const Documentation = ({ click, handleClick, handleChangeTheme, theme }) => {
                     <SideBar />
                     <DocsHub />
                 </div>
+
+                <Footer />
             </div>
         </>
     )

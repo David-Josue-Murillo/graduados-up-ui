@@ -68,21 +68,18 @@ const EndpointsSection = () => {
             </section>
 
             <section id="faculty">
-                <h2 className="text-2xl font-semibold mt-16">Faculty</h2>
-                <p className='font-farro-light text-gray-700'>Actualmente, la universidad está organizada en 19 facultades. Sin embargo, es importante destacar que la distribución de estas facultades y las carreras que ofrecen pueden diferir entre los distintos campus</p>
+                <InforEndpoint 
+                    title={'Faculty'}
+                    endpoint={'faculties'}
+                    descriptionTitle={'Actualmente, la universidad está organizada en 19 facultades. Sin embargo, es importante destacar que la distribución de estas facultades y las carreras que ofrecen pueden diferir entre los distintos campus.'}
+                    descriptionEndpoint={'Este recurso te permite acceder a datos sobre el número de graduados por facultad, proporcionándote una visión completa de la trayectoria académica de cada una desde su creación.'}
+                />
 
-                <article>
-                    <div className='pb-2'>
-                        <h3 className='text-lg font-semibold mt-8'>Obtener toda la cantidad de graduados por facultad</h3>
-                        <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de facultades utilizando el endpoint <span className='text-gray-900 font-bold'>/faculties</span> . Este recurso te permite acceder a datos sobre el número de graduados por facultad, proporcionándote una visión completa de la trayectoria académica de cada una desde su creación.</p>
-                    </div>
-
-                    <SyntaxBlock
-                        method="GET"
-                        url="https://www.graduadosup-api.com/api/faculties"
-                        response={JSON.stringify(facultyResponse, null, 2)}
-                    />
-                </article>
+                <SyntaxBlock
+                    method="GET"
+                    url="https://www.graduadosup-api.com/api/faculties"
+                    response={JSON.stringify(facultyResponse, null, 2)}
+                />
 
                 < InfoRespComponent
                     endpoint={'faculties'}
@@ -93,22 +90,18 @@ const EndpointsSection = () => {
 
 
             <section id="campus">
-                <h2 className="text-2xl font-semibold mt-16">Campus</h2>
-                <p className='font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene varios campus, entre ellos los centros regionales y extensiones en Azuero, Bocas del Toro, Coclé, Colón, Darién, Los Santos, Panamá Este, Panamá Oeste, San Miguelito y Veraguas.
-                </p>
-
-                <article>
-                    <div className='pb-2'>
-                        <h3 className='text-lg font-semibold mt-8'>Obtener toda la cantidad de graduados por campus (Centro regionales y extensiones)</h3>
-                        <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de graduados utilizando el endpoint <span className='text-gray-900 font-bold'>/campus</span> . Este recurso te permite conocer el número total de egresados de todas las facultades a lo largo de los años</p>
-                    </div>
-
-                    <SyntaxBlock
-                        method="GET"
-                        url="https://www.graduadosup-api.com/api/campus"
-                        response={JSON.stringify(campusResponse, null, 2)}
-                    />
-                </article>
+                <InforEndpoint 
+                    title={'Campus'}
+                    endpoint={'campus'}
+                    descriptionTitle={'La Universidad de Panamá (UP) tiene varios campus, entre ellos los centros regionales y extensiones en Azuero, Bocas del Toro, Coclé, Colón, Darién, Los Santos, Panamá Este, Panamá Oeste, San Miguelito y Veraguas.'}
+                    descriptionEndpoint={'Este recurso te permite conocer el número total de egresados de todas las facultades a lo largo de los años, en cada uno de los campus de la Universidad de Panamá.'}
+                />
+                
+                <SyntaxBlock
+                    method="GET"
+                    url="https://www.graduadosup-api.com/api/campus"
+                    response={JSON.stringify(campusResponse, null, 2)}
+                />
 
                 <InfoRespComponent
                     endpoint='campus'
