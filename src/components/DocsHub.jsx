@@ -5,7 +5,7 @@ import graduateAllResponse from '../mocks/api/graduatesResponse.json'
 import campusResponse from '../mocks/api/campusResponse.json'
 import facultyResponse from '../mocks/api/facultyResponse.json'
 import careersResponse from '../mocks/api/careersResponse.json'
-import oneGraduateResponse from '../mocks/api/oneGraduateResponse.json'
+import InfoRespComponent from './InfoRespComponent';
 
 
 const DocsHub = () => {
@@ -118,6 +118,7 @@ const DocsHub = () => {
                         />
                     </article>
 
+                    < InfoRespComponent />
                     <article className='mt-16'>
                         <div className='pb-2'>
                             <h3 className='text-lg font-semibold mt-8'>Obtener un dato en específico</h3>
