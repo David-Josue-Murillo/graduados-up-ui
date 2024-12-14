@@ -5,6 +5,7 @@ import campusResponse from '../mocks/api/campusResponse.json'
 import facultyResponse from '../mocks/api/facultyResponse.json'
 import careersResponse from '../mocks/api/careersResponse.json'
 import graduateResponse from '../mocks/api/graduatesResponse.json'
+import InforEndpoint from './endpoinstComponents/InforEndpoint';
 
 
 const EndpointsSection = () => {
@@ -24,21 +25,24 @@ const EndpointsSection = () => {
             />
 
             <section id="graduates">
-                <h2 className="text-2xl font-semibold mt-16">Graduates</h2>
+                <h2 className="text-2xl font-semibold">Graduates</h2>
                 <p className='font-farro-light text-gray-700'>La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023.</p>
 
-                <article>
-                    <div className='pb-2'>
-                        <h3 className='text-lg font-semibold mt-8'>Obtener todos los graduados</h3>
-                        <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de graduados utilizando el endpoint <span className='text-gray-900 font-bold'>/graduates</span> . Retornara toda la cantidad de estudiantes que se han graduados por año, campus y carrera.</p>
-                    </div>
+                <div className='mb-8'>
+                    <h3 className='text-lg font-semibold mt-8'>Obtener todos los graduados</h3>
+                    <p className='font-farro-light text-gray-700'>Puedes obtener acceso a la lista de graduados utilizando el endpoint <span className='text-gray-900 font-bold'>/graduates</span> . Retornara toda la cantidad de estudiantes que se han graduados por año, campus y carrera.</p>
+                </div>
+                
+                <InforEndpoint 
+                    title={'Graduates'}
+                    endpoint={'graduates'}
+                />
 
-                    <SyntaxBlock
-                        method="GET"
-                        url="https://www.graduadosup-api.com/api/graduates"
-                        response={JSON.stringify(graduateResponse, null, 2)}
-                    />
-                </article>
+                <SyntaxBlock
+                    method="GET"
+                    url="https://www.graduadosup-api.com/api/graduates"
+                    response={JSON.stringify(graduateResponse, null, 2)}
+                />
 
                 < InfoRespComponent
                     endpoint={'graduates'}
