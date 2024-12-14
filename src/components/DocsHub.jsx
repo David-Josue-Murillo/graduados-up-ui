@@ -1,14 +1,8 @@
-import React from 'react'
 import SectionHeader from './startedComponents/SectionHeader';
 import GetStartedSection from './GetStartedSection';
+import EndpointsSection from './EndpointsSection';
 
 const DocsHub = () => {
-    const filtersGraduates = [
-        ['Año', 'year', '2023'],
-        ['Carrera', 'career_id', 'Ingeniería en Informática'],
-        ['Campus', 'campus_id', 'Campus Central'],
-    ];
-
     return (
         <main className="md:w-8/12" data-aos="fade-up" aria-labelledby='page-title'>
             <section>
@@ -41,8 +35,8 @@ const DocsHub = () => {
             </section>
 
             <GetStartedSection />
-
-
+                        
+            <EndpointsSection />
             
         </main>
     )

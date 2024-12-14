@@ -1,4 +1,5 @@
 import SyntaxBlock from './SyntaxBlock';
+import SectionHeader from './startedComponents/SectionHeader';
 import InfoRespComponent from './endpoinstComponents/InfoRespComponent';
 import campusResponse from '../mocks/api/campusResponse.json'
 import facultyResponse from '../mocks/api/facultyResponse.json'
@@ -7,6 +8,13 @@ import graduateResponse from '../mocks/api/graduatesResponse.json'
 
 
 const EndpointsSection = () => {
+
+    const filtersGraduates = [
+        ['Año', 'year', '2023'],
+        ['Carrera', 'career_id', 'Ingeniería en Informática'],
+        ['Campus', 'campus_id', 'Campus Central'],
+    ];
+
     return (
         <section className="my-16" aria-labelledby="endpoints">
             <SectionHeader
