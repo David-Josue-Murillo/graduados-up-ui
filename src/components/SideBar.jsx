@@ -26,7 +26,7 @@ const SideBar = () => {
     };
 
     return (
-        <aside className="w-64 p-4 rounded-lg">
+        <aside className="w-64 p-4 rounded-lg fixed">
             <ul className="space-y-4">
                 {navItems.map((navItem) => (
                     <li key={navItem.name}>
