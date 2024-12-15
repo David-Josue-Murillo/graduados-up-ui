@@ -17,7 +17,7 @@ const Documentation = ({ click, handleClick, handleChangeTheme, theme }) => {
                     theme={theme}
                 />
 
-                <div className="flex gap-4">
+                <div className="flex gap-4 mt-24">
                     <SideBar />
                     <DocsHub />
                 </div>

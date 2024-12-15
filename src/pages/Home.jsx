@@ -14,7 +14,7 @@ const Home = ({click, handleClick, handleChangeTheme, theme}) => {
                     theme={theme}
                 />
                 
-                <main>
+                <main className="mt-36">
                     <HeroSection
                         click={click}
                         theme={theme}

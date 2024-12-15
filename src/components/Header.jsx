@@ -11,7 +11,7 @@ const Header = ({click, handleClick, handleChangeTheme, theme}) => {
 
     return (
         <>
-            <header className="flex justify-between items-center flex-wrap py-4 px-6 lg:px-12 border-b dark:border-0 dark:text-white">
+            <header className="bg-white fixed top-0 w-full z-10 flex justify-between items-center flex-wrap py-4 px-6 lg:px-12 border-b dark:border-0 dark:text-white">
                 <Logo 
                     theme={theme}
                 />
