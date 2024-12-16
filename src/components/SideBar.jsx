@@ -1,9 +1,5 @@
-import { useState } from 'react';
 
 const SideBar = ({onNavigate, refs}) => {
-    // Estado para el elemento activo
-    const [activeItem, setActiveItem] = useState('');
-
     // Elementos de navegación con sublistas
     const navItems = [
         {
@@ -32,12 +28,6 @@ const SideBar = ({onNavigate, refs}) => {
         },
     ];
 
-    // Función para manejar el clic en un elemento principal
-    const handleItemClick = (item) => {
-        setActiveItem(activeItem === item ? '' : item); // Alterna entre expandir y colapsar
-    };
-
-
     return (
         <aside className='w-64 p-4 rounded-lg fixed' data-aos="fade-right">
             <ul className="space-y-4">
@@ -46,15 +36,9 @@ const SideBar = ({onNavigate, refs}) => {
                         {/* Elemento principal */}
                         <div
                             onClick={() => {
-                                handleItemClick(navItem.name); 
                                 onNavigate(navItem.ref)
                             }}
-                            className={`pl-6 py-3 transition-all cursor-pointer rounded-r-full 
-                            ${activeItem === navItem.name
-                                    ? 'pl-12 bg-green-300 text-green-900 font-bold dark:bg-gray-700'
-                                    : 'text-gray-950 hover:text-green-600 dark:hover:text-green-600 dark:text-gray-100 hover:pl-10 hover:bg-gray-200 dark:hover:bg-gray-900'
-                                }`}
-                            aria-expanded={activeItem === navItem.name}
+                            className='pl-6 py-3 transition-all cursor-pointer rounded-r-full text-gray-950 hover:text-green-600 dark:hover:text-green-600 dark:text-gray-100 hover:pl-10 dark:hover:bg-gray-900'
                         >
                             {navItem.name}
                         </div>
