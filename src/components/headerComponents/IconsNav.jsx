@@ -11,7 +11,7 @@ const IconsNav = ({ click, handleChangeTheme, theme }) => {
             </button>
 
             <button className='hover:scale-110'>
-                <a href='https://github.com/David-Josue-Murillo/graduados-up-ui'>
+                <a href='https://github.com/David-Josue-Murillo/graduadosup-api'>
                     <GitHubIcons theme={theme} />
                 </a>
             </button>

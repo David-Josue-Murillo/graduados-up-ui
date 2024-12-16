@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const SideBar = () => {
     // Estado para el elemento activo
@@ -25,8 +25,9 @@ const SideBar = () => {
         setActiveItem(activeItem === item ? '' : item); // Alterna entre expandir y colapsar
     };
 
+
     return (
-        <aside className="w-64 p-4 rounded-lg fixed">
+        <aside className='w-64 p-4 rounded-lg fixed' data-aos="fade-right">
             <ul className="space-y-4">
                 {navItems.map((navItem) => (
                     <li key={navItem.name}>
