@@ -8,17 +8,26 @@ const SideBar = ({onNavigate, refs}) => {
     const navItems = [
         {
             name: 'Introduccion',
-            subItems: ['¿Qué es?'],
+            items: {
+                subName: ['¿Qué es?'],
+                refItem: [refs.whatIsRef]
+            },
             ref: refs.introRef,
         },
         {
             name: 'Empezar',
-            subItems: ['URL Base', 'Rutas disponibles', 'Paginación'],
+            items: {
+                subName: ['URL Base', 'Rutas disponibles', 'Paginación'],
+                refItem: [refs.urlBaseRef, refs.availableRoutesRef, refs.paginationRef]
+            },
             ref: refs.startRef,
         },
         {
             name: 'Endpoints',
-            subItems: ['/graduates', '/careers', '/faculty', '/campus'],
+            items: {
+                subName: ['/graduates', '/careers', '/faculty', '/campus'],
+                refItem: [refs.graduatesRef, refs.careersRef, refs.facultiesRef, refs.campusRef]
+            },
             ref: refs.endpointRef,
         },
     ];
@@ -45,6 +54,7 @@ const SideBar = ({onNavigate, refs}) => {
                                     ? 'pl-12 bg-green-300 text-green-900 font-bold dark:bg-gray-700'
                                     : 'text-gray-950 hover:text-green-600 dark:hover:text-green-600 dark:text-gray-100 hover:pl-10 hover:bg-gray-200 dark:hover:bg-gray-900'
                                 }`}
+                            aria-expanded={activeItem === navItem.name}
                         >
                             {navItem.name}
                         </div>
@@ -52,12 +62,13 @@ const SideBar = ({onNavigate, refs}) => {
                         {/* Sublista */}
 
                         <ul className="ml-8 mt-2 space-y-2">
-                            {navItem.subItems.map((subItem) => (
+                            {navItem.items.subName.map((item, idx) => (
                                 <li
-                                    key={subItem}
+                                    onClick={() => onNavigate(navItem.items.refItem[idx])}
+                                    key={item}
                                     className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-600 cursor-pointer hover:pl-4 transition-all"
                                 >
-                                    {subItem}
+                                    {item}
                                 </li>
                             ))}
                         </ul>

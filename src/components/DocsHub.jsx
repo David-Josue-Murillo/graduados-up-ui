@@ -11,7 +11,7 @@ const DocsHub = ({refs}) => {
                     title="Introducción"
                     description="¡Bienvenido a la documentación de Graduados UP! Esta página te dará una introducción sobre que trata esta RESTful API."
                 />
-                <article>
+                <article ref={refs.whatIsRef}>
                     <h2 className="text-lg dark:text-gray-100 font-medium mt-8" id="about-graduados-up">¿Qué es Graduados UP?</h2>
                     <p className="font-farro-light text-gray-600 dark:text-gray-400" aria-describedby="about-graduados-up">
                         Graduados UP es un proyecto que busca facilitar la gestión de graduados de la Universidad del Pacífico, proporcionando una API que permite acceder a datos detallados sobre los graduados, sus facultades, carreras y campus.
@@ -33,11 +33,20 @@ const DocsHub = ({refs}) => {
             </section>
 
             <section ref={refs.startRef}>
-                <GetStartedSection />
+                <GetStartedSection 
+                    urlBaseRef={refs.urlBaseRef}
+                    availableRoutesRef={refs.availableRoutesRef}
+                    paginationRef={refs.paginationRef}
+                />
             </section>
 
             <section ref={refs.endpointRef}>
-                <EndpointsSection />
+                <EndpointsSection 
+                    graduatesRef={refs.graduatesRef}
+                    careersRef={refs.careersRef}
+                    facultiesRef={refs.facultiesRef}
+                    campusRef={refs.campusRef}
+                />
             </section>
         </main>
     )

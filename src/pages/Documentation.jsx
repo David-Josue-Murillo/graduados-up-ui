@@ -8,9 +8,8 @@ import { useRef } from "react";
 
 const Documentation = ({ click, handleClick, handleChangeTheme, theme }) => {
 
-    const introRef = useRef(null);
-    const startRef = useRef(null);
-    const endpointRef = useRef(null);
+    const [introRef, startRef, endpointRef, whatIsRef, urlBaseRef, availableRoutesRef, paginationRef, graduatesRef, careersRef, facultiesRef, campusRef] = Array(11).fill(null).map(() => useRef(null));
+
 
     const scrollToSection = (ref) => {
         ref.current.scrollIntoView({ behavior: 'smooth' });
@@ -29,11 +28,11 @@ const Documentation = ({ click, handleClick, handleChangeTheme, theme }) => {
                 <div className="flex gap-4 pt-24">
                     <SideBar 
                         onNavigate={scrollToSection}
-                        refs={{ introRef, startRef, endpointRef }}
+                        refs={{ introRef, startRef, endpointRef, whatIsRef, urlBaseRef, availableRoutesRef, paginationRef, graduatesRef, careersRef, facultiesRef, campusRef }}
                     />
 
                     <DocsHub 
-                        refs={{ introRef, startRef, endpointRef }}
+                        refs={{ introRef, startRef, endpointRef, whatIsRef, urlBaseRef, availableRoutesRef, paginationRef, graduatesRef, careersRef, facultiesRef, campusRef }}
                     />
                 </div>
 

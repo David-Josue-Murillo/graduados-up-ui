@@ -8,7 +8,7 @@ import graduateResponse from '../mocks/api/graduatesResponse.json'
 import InforEndpoint from './endpoinstComponents/InforEndpoint';
 
 
-const EndpointsSection = () => {
+const EndpointsSection = ({graduatesRef, careersRef, facultiesRef, campusRef}) => {
 
     const filtersGraduates = [
         ['Año', 'year', '2023'],
@@ -24,7 +24,7 @@ const EndpointsSection = () => {
                 description="A continuación se muestran los diferentes endpoints disponibles en la RESTful API de Graduados UP y cómo puedes acceder a ellos. Puedes obtener información detallada sobre graduados, facultades, carreras y campus. Cada endpoint tiene una descripción detallada de cómo acceder a los datos."
             />
 
-            <section id="graduates">
+            <section id="graduates" ref={graduatesRef}>
                 <InforEndpoint 
                     title={'Graduates'}
                     endpoint={'graduates'}
@@ -46,7 +46,7 @@ const EndpointsSection = () => {
                 />
             </section>
 
-            <section id="careers">
+            <section id="careers" ref={careersRef}>
                 <InforEndpoint 
                     title={'Careers'}
                     endpoint={'carrers'}
@@ -67,7 +67,7 @@ const EndpointsSection = () => {
                 />
             </section>
 
-            <section id="faculty">
+            <section id="faculty" ref={facultiesRef}>
                 <InforEndpoint 
                     title={'Faculty'}
                     endpoint={'faculties'}
@@ -89,7 +89,7 @@ const EndpointsSection = () => {
             </section>
 
 
-            <section id="campus">
+            <section id="campus" ref={campusRef}>
                 <InforEndpoint 
                     title={'Campus'}
                     endpoint={'campus'}
