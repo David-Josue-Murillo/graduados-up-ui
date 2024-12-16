@@ -4,7 +4,7 @@ import EndpointsSection from './EndpointsSection';
 
 const DocsHub = () => {
     return (
-        <main className="md:w-8/12 ml-60" data-aos="fade-up" aria-labelledby='page-title'>
+        <main className="md:w-8/12 ml-64" data-aos="fade-up" aria-labelledby='page-title'>
             <section>
                 <SectionHeader
                     id="introduccion"

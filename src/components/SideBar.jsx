@@ -36,7 +36,7 @@ const SideBar = () => {
                             className={`pl-6 py-3 transition-all cursor-pointer rounded-r-full 
                             ${activeItem === navItem.name
                                     ? 'pl-12 bg-green-300 text-green-900 font-bold dark:bg-gray-700'
-                                    : 'hover:text-green-600 hover:pl-10 hover:bg-gray-200 dark:hover:bg-gray-900'
+                                    : 'text-gray-950 hover:text-green-600 dark:hover:text-green-600 dark:text-gray-100 hover:pl-10 hover:bg-gray-200 dark:hover:bg-gray-900'
                                 }`}
                         >
                             {navItem.name}
@@ -48,7 +48,7 @@ const SideBar = () => {
                             {navItem.subItems.map((subItem) => (
                                 <li
                                     key={subItem}
-                                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-gray-200 cursor-pointer hover:pl-4 transition-all"
+                                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-600 cursor-pointer hover:pl-4 transition-all"
                                 >
                                     {subItem}
                                 </li>
