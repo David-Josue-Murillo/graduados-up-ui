@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const SideBar = () => {
+const SideBar = ({onNavigate, refs}) => {
     // Estado para el elemento activo
     const [activeItem, setActiveItem] = useState('');
 
@@ -9,14 +9,17 @@ const SideBar = () => {
         {
             name: 'Introduccion',
             subItems: ['¿Qué es?'],
+            ref: refs.introRef,
         },
         {
             name: 'Empezar',
             subItems: ['URL Base', 'Rutas disponibles', 'Paginación'],
+            ref: refs.startRef,
         },
         {
             name: 'Endpoints',
             subItems: ['/graduates', '/careers', '/faculty', '/campus'],
+            ref: refs.endpointRef,
         },
     ];
 
@@ -33,7 +36,10 @@ const SideBar = () => {
                     <li key={navItem.name}>
                         {/* Elemento principal */}
                         <div
-                            onClick={() => handleItemClick(navItem.name)}
+                            onClick={() => {
+                                handleItemClick(navItem.name); 
+                                onNavigate(navItem.ref)
+                            }}
                             className={`pl-6 py-3 transition-all cursor-pointer rounded-r-full 
                             ${activeItem === navItem.name
                                     ? 'pl-12 bg-green-300 text-green-900 font-bold dark:bg-gray-700'

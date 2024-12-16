@@ -2,10 +2,10 @@ import SectionHeader from './startedComponents/SectionHeader';
 import GetStartedSection from './GetStartedSection';
 import EndpointsSection from './EndpointsSection';
 
-const DocsHub = () => {
+const DocsHub = ({refs}) => {
     return (
         <main className="md:w-8/12 ml-64" data-aos="fade-up" aria-labelledby='page-title'>
-            <section>
+            <section ref={refs.introRef} aria-labelledby="introduction">
                 <SectionHeader
                     id="introduccion"
                     title="Introducción"
@@ -31,9 +31,14 @@ const DocsHub = () => {
                     </ul>
                 </article>
             </section>
-            <GetStartedSection />
 
-            <EndpointsSection />
+            <section ref={refs.startRef}>
+                <GetStartedSection />
+            </section>
+
+            <section ref={refs.endpointRef}>
+                <EndpointsSection />
+            </section>
         </main>
     )
 }
