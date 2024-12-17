@@ -29,7 +29,7 @@ const SideBar = ({onNavigate, refs}) => {
     ];
 
     return (
-        <aside className='w-64 p-4 rounded-lg fixed' data-aos="fade-right">
+        <aside className='w-0 md:w-64 p-0 md:p-4 rounded-lg hidden md:flex fixed' data-aos='fade-right'>
             <ul className="space-y-4">
                 {navItems.map((navItem) => (
                     <li key={navItem.name}>

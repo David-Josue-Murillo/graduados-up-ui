@@ -25,7 +25,7 @@ const Documentation = ({ click, handleClick, handleChangeTheme, theme }) => {
                     theme={theme}
                 />
 
-                <div className="flex gap-4 pt-24">
+                <div className="flex gap-4 pt-16 md:pt-24">
                     <SideBar 
                         onNavigate={scrollToSection}
                         refs={{ introRef, startRef, endpointRef, whatIsRef, urlBaseRef, availableRoutesRef, paginationRef, graduatesRef, careersRef, facultiesRef, campusRef }}
