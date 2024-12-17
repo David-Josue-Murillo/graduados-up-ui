@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home"
 import Documentation from "./pages/Documentation";
-import Examples from "./pages/Examples";
+import About from "./pages/About";
 
 function App() {
 
@@ -52,9 +52,9 @@ function App() {
                     />
 
                     <Route
-                        path="/examples"
+                        path="/about"
                         element={
-                            <Examples
+                            <About
                                 click={click}
                                 handleClick={handleClick}
                                 handleChangeTheme={handleChangeTheme}

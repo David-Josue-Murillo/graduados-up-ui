@@ -13,8 +13,8 @@ const Navbar = ({click}) => {
                     <li className='hover:text-green-600'>Documentación</li>
                 </Link>
                 
-                <Link to='/examples'>
-                    <li className='hover:text-green-600'>Ejemplos</li>
+                <Link to='/about'>
+                    <li className='hover:text-green-600'>Acerca de</li>
                 </Link>
                 
                 <Link to=''>
