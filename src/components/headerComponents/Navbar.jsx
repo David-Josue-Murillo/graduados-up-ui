@@ -17,9 +17,6 @@ const Navbar = ({click}) => {
                     <li className='hover:text-green-600'>Acerca de</li>
                 </Link>
                 
-                <Link to=''>
-                    <li className='hover:text-green-600'>Up</li>
-                </Link>
             </ul>
         </nav>
     )
