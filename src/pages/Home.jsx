@@ -2,8 +2,14 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import GraduatesSection from "../components/GraduatesSection";
 import HeroSection from "../components/HeroSection";
+import { useNavigation } from "react-router-dom";
+import { useTheme } from "../contexts/ThemeContext";
 
-const Home = ({click, handleClick, handleChangeTheme, theme}) => {
+const Home = () => {
+
+    const { click, handleClick } = useNavigation();
+    const { theme, handleChangeTheme } = useTheme();
+
     return (
         <>
             <div className="min-h-screen bg-slate-50 dark:bg-gray-950 font-farro">

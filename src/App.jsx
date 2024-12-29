@@ -1,70 +1,26 @@
-import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import { NavigationProvider } from "./contexts/NavigationContext";
+import Layout from "./components/Layout";
 import Home from "./pages/Home"
 import Documentation from "./pages/Documentation";
 import About from "./pages/About";
 
 function App() {
-
-    const [click, setClick] = useState(false);
-    const [theme, setTheme] = useState('light');
-
-    const handleClick = () => setClick(!click);
-
-    useEffect(() => {
-        if (theme === 'dark') {
-            document.querySelector("html").classList.add('dark');
-        } else {
-            document.querySelector("html").classList.remove('dark');
-        }
-    }, [theme])
-
-    const handleChangeTheme = () => {
-        setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
-    }
-
     return (
-        <>
-            <BrowserRouter>
-                <Routes>
-                    <Route
-                        path="/"
-                        element={
-                            <Home
-                                click={click}
-                                handleClick={handleClick}
-                                handleChangeTheme={handleChangeTheme}
-                                theme={theme}
-                            />
-                        }
-                    />
-
-                    <Route
-                        path="/documentation"
-                        element={
-                            <Documentation
-                                click={click}
-                                handleClick={handleClick}
-                                handleChangeTheme={handleChangeTheme}
-                                theme={theme}
-                            />
-                        }
-                    />
-
-                    <Route
-                        path="/about"
-                        element={
-                            <About
-                                click={click}
-                                handleClick={handleClick}
-                                handleChangeTheme={handleChangeTheme}
-                                theme={theme}
-                            />
-                        }
-                    />
-                </Routes>
-            </BrowserRouter>
-        </>
+        <ThemeProvider>
+            <NavigationProvider>
+                <BrowserRouter>
+                    <Layout>
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/documentation" element={<Documentation />} />
+                            <Route path="/about" element={<About />} />
+                        </Routes>
+                    </Layout>
+                </BrowserRouter>
+            </NavigationProvider>
+        </ThemeProvider>
     )
 }
 
