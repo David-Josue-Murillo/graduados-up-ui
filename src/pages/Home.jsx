@@ -2,21 +2,21 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import GraduatesSection from "../components/GraduatesSection";
 import HeroSection from "../components/HeroSection";
-import { useNavigation } from "react-router-dom";
 import { useTheme } from "../contexts/ThemeContext";
+import { useNavigation } from "../contexts/NavigationContext";
 
 const Home = () => {
 
-    const { click, handleClick } = useNavigation();
-    const { theme, handleChangeTheme } = useTheme();
+    const { click, setClick } = useNavigation();
+    const { theme, toggleTheme } = useTheme();
 
     return (
         <>
             <div className="min-h-screen bg-slate-50 dark:bg-gray-950 font-farro">
                 <Header 
                     click={click}
-                    handleClick={handleClick}
-                    handleChangeTheme={handleChangeTheme}
+                    setClick={setClick}
+                    toggleTheme={toggleTheme}
                     theme={theme}
                 />
                 

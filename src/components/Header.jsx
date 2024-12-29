@@ -6,7 +6,7 @@ import { FiX } from 'react-icons/fi';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const Header = ({click, handleClick, handleChangeTheme, theme}) => {
+const Header = ({click, setClick, toggleTheme, theme}) => {
     AOS.init();
 
     return (
@@ -16,7 +16,7 @@ const Header = ({click, handleClick, handleChangeTheme, theme}) => {
                     theme={theme}
                 />
 
-                <button className='block md:hidden transition' onClick={handleClick}>
+                <button className='block md:hidden transition' onClick={setClick}>
                     {click ? <FiX /> : <CiMenuFries />}
                 </button>
 
@@ -26,7 +26,7 @@ const Header = ({click, handleClick, handleChangeTheme, theme}) => {
                 
                 <IconsNav
                     click={click}
-                    handleChangeTheme={handleChangeTheme}
+                    toggleTheme={toggleTheme}
                     theme={theme}
                 />
             </header>

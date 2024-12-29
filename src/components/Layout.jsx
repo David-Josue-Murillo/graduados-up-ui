@@ -1,6 +1,6 @@
 import React from 'react'
-import { useNavigation } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
+import { useNavigation } from '../contexts/NavigationContext';
 
 const Layout = ({ children }) => {
 
@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     return (
       <div className={`app ${theme}`}>
         {/* Aquí puedes agregar componentes comunes como Navbar, Footer, etc. */}
-        
+
         {children}
       </div>
     );
