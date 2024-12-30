@@ -1,5 +1,3 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import SideBar from "../components/SideBar";
 import 'aos/dist/aos.css';
 import DocsHub from "../components/DocsHub";
@@ -18,7 +16,6 @@ const Documentation = ({ click, handleClick, handleChangeTheme, theme }) => {
     return (
         <>
             <div className="min-h-screen bg-slate-50 dark:bg-gray-950 font-farro">
-                
 
                 <div className="flex gap-4 pt-16 md:pt-24">
                     <SideBar 
@@ -31,7 +28,6 @@ const Documentation = ({ click, handleClick, handleChangeTheme, theme }) => {
                     />
                 </div>
 
-                <Footer />
             </div>
         </>
     )

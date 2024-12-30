@@ -1,5 +1,3 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import mephoto from "../assets/img/me.jpg";
 
 
@@ -35,8 +33,6 @@ const About = ({ click, handleClick, handleChangeTheme, theme }) => {
                         </div>
                     </section>
                 </main>
-
-                <Footer />
             </div>
         </>
     )

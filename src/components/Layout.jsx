@@ -2,6 +2,7 @@ import React from 'react'
 import { useTheme } from '../contexts/ThemeContext';
 import { useNavigation } from '../contexts/NavigationContext';
 import Header from './Header';
+import Footer from './Footer';
 
 const Layout = ({ children }) => {
 
@@ -19,6 +20,8 @@ const Layout = ({ children }) => {
             />
 
             {children}
+
+            <Footer />
         </div>
     );
 }

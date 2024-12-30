@@ -1,10 +1,8 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import GraduatesSection from "../components/GraduatesSection";
 import HeroSection from "../components/HeroSection";
 import { useTheme } from "../contexts/ThemeContext";
 import { useNavigation } from "../contexts/NavigationContext";
-
+    
 const Home = () => {
 
     const { click, setClick } = useNavigation();
@@ -24,8 +22,6 @@ const Home = () => {
                         <GraduatesSection />
                     </section>
                 </main>
-
-                <Footer />
             </div>
         </>
     );
