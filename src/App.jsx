@@ -4,7 +4,7 @@ import { NavigationProvider } from "./contexts/NavigationContext";
 import Layout from "./components/Layout";
 import Home from "./pages/Home"
 import Documentation from "./pages/Documentation";
-import About from "./pages/About";
+import About from "./pages/About/About";
 
 function App() {
     return (

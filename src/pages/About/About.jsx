@@ -1,7 +1,7 @@
-import mephoto from "../assets/img/me.jpg";
+import mephoto from "../../assets/img/me.jpg";
 
 
-const About = ({ click, handleClick, handleChangeTheme, theme }) => {
+const About = () => {
     return (
         <>
             <div className="min-h-screen bg-slate-50 dark:bg-gray-950 font-farro">
