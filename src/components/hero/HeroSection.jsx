@@ -1,5 +1,5 @@
 import React from "react";
-import GitHubIcons from "./icons/GitHubIcons";
+import GitHubIcons from "../icons/GitHubIcons";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";

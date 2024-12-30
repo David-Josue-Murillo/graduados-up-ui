@@ -1,5 +1,5 @@
-import GraduatesSection from "../components/GraduatesSection";
-import HeroSection from "../components/HeroSection";
+import GraduatesSection from "../components/graduates/GraduatesSection";
+import HeroSection from "../components/hero/HeroSection";
 import { useTheme } from "../contexts/ThemeContext";
 import { useNavigation } from "../contexts/NavigationContext";
     

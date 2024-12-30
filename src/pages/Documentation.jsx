@@ -1,36 +1,22 @@
 import SideBar from "../components/SideBar";
-import 'aos/dist/aos.css';
 import DocsHub from "../components/DocsHub";
-import { useRef } from "react";
+import { useDocumentationRefs } from "../hooks/useDocumentationRefs";
+import 'aos/dist/aos.css';
 
-
-const Documentation = ({ click, handleClick, handleChangeTheme, theme }) => {
-
-    const [introRef, startRef, endpointRef, whatIsRef, urlBaseRef, availableRoutesRef, paginationRef, graduatesRef, careersRef, facultiesRef, campusRef] = Array(11).fill(null).map(() => useRef(null));
-
-
-    const scrollToSection = (ref) => {
-        ref.current.scrollIntoView({ behavior: 'smooth' });
-    };
+const Documentation = () => {
+    const { refs, scrollToSection } = useDocumentationRefs();
 
     return (
-        <>
-            <div className="min-h-screen bg-slate-50 dark:bg-gray-950 font-farro">
-
-                <div className="flex gap-4 pt-16 md:pt-24">
-                    <SideBar 
-                        onNavigate={scrollToSection}
-                        refs={{ introRef, startRef, endpointRef, whatIsRef, urlBaseRef, availableRoutesRef, paginationRef, graduatesRef, careersRef, facultiesRef, campusRef }}
-                    />
-
-                    <DocsHub 
-                        refs={{ introRef, startRef, endpointRef, whatIsRef, urlBaseRef, availableRoutesRef, paginationRef, graduatesRef, careersRef, facultiesRef, campusRef }}
-                    />
-                </div>
-
+        <div className="min-h-screen bg-slate-50 dark:bg-gray-950 font-farro">
+            <div className="flex gap-4 pt-16 md:pt-24">
+                <SideBar
+                    onNavigate={scrollToSection}
+                    refs={refs}
+                />
+                <DocsHub refs={refs} />
             </div>
-        </>
-    )
-}
+        </div>
+    );
+};
 
-export default Documentation
+export default Documentation;
