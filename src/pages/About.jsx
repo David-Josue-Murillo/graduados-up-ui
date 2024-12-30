@@ -7,13 +7,6 @@ const About = ({ click, handleClick, handleChangeTheme, theme }) => {
     return (
         <>
             <div className="min-h-screen bg-slate-50 dark:bg-gray-950 font-farro">
-                <Header
-                    click={click}
-                    handleClick={handleClick}
-                    handleChangeTheme={handleChangeTheme}
-                    theme={theme}
-                />
-
                 <main className="container mx-auto px-6 py-12 mt-20">
                     <section className="px-12">
                         <h1 className="text-green-600 text-center text-3xl font-farro-bold font-bold">¿Qué es Lorem Ipsum?</h1>

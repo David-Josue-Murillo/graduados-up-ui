@@ -18,12 +18,7 @@ const Documentation = ({ click, handleClick, handleChangeTheme, theme }) => {
     return (
         <>
             <div className="min-h-screen bg-slate-50 dark:bg-gray-950 font-farro">
-                <Header
-                    click={click}
-                    handleClick={handleClick}
-                    handleChangeTheme={handleChangeTheme}
-                    theme={theme}
-                />
+                
 
                 <div className="flex gap-4 pt-16 md:pt-24">
                     <SideBar 
