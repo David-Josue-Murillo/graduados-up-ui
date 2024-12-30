@@ -13,13 +13,6 @@ const Home = () => {
     return (
         <>
             <div className="min-h-screen bg-slate-50 dark:bg-gray-950 font-farro">
-                <Header 
-                    click={click}
-                    setClick={setClick}
-                    toggleTheme={toggleTheme}
-                    theme={theme}
-                />
-                
                 <main className="pt-28">
                     <HeroSection
                         click={click}
