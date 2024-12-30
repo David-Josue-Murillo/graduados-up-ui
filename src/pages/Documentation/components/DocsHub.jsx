@@ -1,6 +1,6 @@
-import SectionHeader from './startedComponents/SectionHeader';
-import GetStartedSection from './GetStartedSection';
-import EndpointsSection from './EndpointsSection';
+import EndpointsSection from "./doc/EndpointsSection"
+import GetStartedSection from "./doc/GetStartedSection"
+import SectionHeader from "./doc/SectionHeader"
 
 const DocsHub = ({refs}) => {
     return (
@@ -41,7 +41,7 @@ const DocsHub = ({refs}) => {
             </section>
 
             <section ref={refs.endpointRef}>
-                <EndpointsSection 
+                <EndpointsSection
                     graduatesRef={refs.graduatesRef}
                     careersRef={refs.careersRef}
                     facultiesRef={refs.facultiesRef}

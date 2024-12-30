@@ -1,6 +1,6 @@
-import SectionHeader from './startedComponents/SectionHeader'
-import SyntaxBlock from './SyntaxBlock'
-import graduateResponse from '../mocks/api/graduatesResponse.json'
+import SectionHeader from './SectionHeader'
+import SyntaxBlock from '../../../../components/SyntaxBlock'
+import graduateResponse from '../../../../mocks/api/graduatesResponse.json'
 
 const GetStartedSection = ({urlBaseRef, availableRoutesRef, paginationRef}) => {
 

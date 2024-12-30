@@ -1,6 +1,6 @@
-import SideBar from "../components/SideBar";
-import DocsHub from "../components/DocsHub";
-import { useDocumentationRefs } from "../hooks/useDocumentationRefs";
+import SideBar from "./components/SideBar";
+import DocsHub from "./components/DocsHub";
+import { useDocumentationRefs } from "../../hooks/useDocumentationRefs";
 import 'aos/dist/aos.css';
 
 const Documentation = () => {

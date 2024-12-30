@@ -1,11 +1,11 @@
-import SyntaxBlock from './SyntaxBlock';
-import SectionHeader from './startedComponents/SectionHeader';
-import InfoRespComponent from './endpoinstComponents/InfoRespComponent';
-import campusResponse from '../mocks/api/campusResponse.json'
-import facultyResponse from '../mocks/api/facultyResponse.json'
-import careersResponse from '../mocks/api/careersResponse.json'
-import graduateResponse from '../mocks/api/graduatesResponse.json'
-import InforEndpoint from './endpoinstComponents/InforEndpoint';
+import SyntaxBlock from '../../../../components/SyntaxBlock';
+import SectionHeader from './SectionHeader';
+import InfoRespComponent from '../../../../components/endpoinstComponents/InfoRespComponent';
+import campusResponse from '../../../../mocks/api/campusResponse.json'
+import facultyResponse from '../../../../mocks/api/facultyResponse.json'
+import careersResponse from '../../../../mocks/api/careersResponse.json'
+import graduateResponse from '../../../../mocks/api/graduatesResponse.json'
+import InforEndpoint from '../../../../components/endpoinstComponents/InforEndpoint';
 
 
 const EndpointsSection = ({graduatesRef, careersRef, facultiesRef, campusRef}) => {

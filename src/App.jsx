@@ -3,7 +3,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { NavigationProvider } from "./contexts/NavigationContext";
 import Layout from "./components/Layout";
 import Home from "./pages/Home/Home"
-import Documentation from "./pages/Documentation";
+import Documentation from "./pages/Documentation/Documentation";
 import About from "./pages/About/About";
 
 function App() {
