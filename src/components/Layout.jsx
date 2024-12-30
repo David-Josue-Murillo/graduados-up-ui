@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <div className={`app ${theme}`}>
+        <div className={`app ${theme} dark:bg-gray-950`}>
             {/* Aquí puedes agregar componentes comunes como Navbar, Footer, etc. */}
             <Header
                 click={click}
