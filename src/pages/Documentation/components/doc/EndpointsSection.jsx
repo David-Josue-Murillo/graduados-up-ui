@@ -1,11 +1,13 @@
 import SyntaxBlock from '../../../../components/SyntaxBlock';
 import SectionHeader from './SectionHeader';
-import InfoRespComponent from '../../../../components/endpoinstComponents/InfoRespComponent';
+import InfoRespComponent from '../../../../components/endpointComponents/InfoRespComponent';
 import campusResponse from '../../../../mocks/api/campusResponse.json'
 import facultyResponse from '../../../../mocks/api/facultyResponse.json'
 import careersResponse from '../../../../mocks/api/careersResponse.json'
 import graduateResponse from '../../../../mocks/api/graduatesResponse.json'
-import InforEndpoint from '../../../../components/endpoinstComponents/InforEndpoint';
+import InforEndpoint from '../../../../components/endpointComponents/InforEndpoint';
+import { ENDPOINTS_DATA } from '../../constants/endpoints';
+import EndpointSection from '../../../../components/EndpointSection';
 
 
 const EndpointsSection = ({graduatesRef, careersRef, facultiesRef, campusRef}) => {
@@ -16,6 +18,13 @@ const EndpointsSection = ({graduatesRef, careersRef, facultiesRef, campusRef}) =
         ['Campus', 'campus_id', 'Campus Central'],
     ];
 
+    const endpointResponse = {
+        graduates: graduateResponse,
+        careers: careersResponse,
+        facultiesRef: facultyResponse,
+        campus: campusResponse
+    }
+
     return (
         <section className="my-16" aria-labelledby="endpoints">
             <SectionHeader
@@ -24,91 +33,15 @@ const EndpointsSection = ({graduatesRef, careersRef, facultiesRef, campusRef}) =
                 description="A continuación se muestran los diferentes endpoints disponibles en la RESTful API de Graduados UP y cómo puedes acceder a ellos. Puedes obtener información detallada sobre graduados, facultades, carreras y campus. Cada endpoint tiene una descripción detallada de cómo acceder a los datos."
             />
 
-            <section id="graduates" ref={graduatesRef}>
-                <InforEndpoint 
-                    title={'Graduates'}
-                    endpoint={'graduates'}
-                    descriptionTitle={'La Universidad de Panamá (UP) tiene 287,729 graduados desde 1939 hasta 2023.'}
-                    descriptionEndpoint={'Retornara toda la cantidad de estudiantes que se han graduados por año, campus y carrera.'}
+            {Object.entries(ENDPOINTS_DATA).map(([key, value]) => (
+                <EndpointSection 
+                    key={key}
+                    id={key}
+                    reference={key === 'graduates' ? graduatesRef : key === 'careers' ? careersRef : key === 'faculty' ? facultiesRef : campusRef}
+                    data={value}
+                    response={endpointResponse[key]}
                 />
-
-                <SyntaxBlock
-                    method="GET"
-                    url="https://www.graduadosup-api.com/api/graduates"
-                    response={JSON.stringify(graduateResponse, null, 2)}
-                />
-
-                < InfoRespComponent
-                    endpoint={'graduates'}
-                    descriptionEndpoint={'Puedes obtener acceso a un único dato de la lista de graduados agregando un id como un parámetro, utilizando el endpoint'}
-                    descriptionFilter={'También puedes obtener un dato en específico filtrando a través de los siguientes parametros:'}
-                    filter={filtersGraduates}
-                />
-            </section>
-
-            <section id="careers" ref={careersRef}>
-                <InforEndpoint 
-                    title={'Careers'}
-                    endpoint={'carrers'}
-                    descriptionTitle={'La Universidad de Panamá ofrece una amplia variedad de carreras para sus estudiantes. Cuenta con un alrededor de 171 carreras en diferentes áreas.'}
-                    descriptionEndpoint={'Al realizar la petición, se retornara todos los registros junto con el nombre de la facultad a la cual pertenece la carrera junto a otros datos adicionales.'}
-                />
-                
-                <SyntaxBlock
-                    method="GET"
-                    url="https://www.graduadosup-api.com/api/careers"
-                    response={JSON.stringify(careersResponse, null, 2)}
-                />
-
-                < InfoRespComponent
-                    endpoint={'careers'}
-                    descriptionEndpoint={'Puedes obtener acceso a un único dato de la lista de carreras agregando un id como un parámetro, utilizando el endpoint'}
-                    descriptionFilter={'Hasta el momento no hay soporte para filtrar por parámetros. Pero ya se está trabajando en ello.'}
-                />
-            </section>
-
-            <section id="faculty" ref={facultiesRef}>
-                <InforEndpoint 
-                    title={'Faculty'}
-                    endpoint={'faculties'}
-                    descriptionTitle={'Actualmente, la universidad está organizada en 19 facultades. Sin embargo, es importante destacar que la distribución de estas facultades y las carreras que ofrecen pueden diferir entre los distintos campus.'}
-                    descriptionEndpoint={'Este recurso te permite acceder a datos sobre el número de graduados por facultad, proporcionándote una visión completa de la trayectoria académica de cada una desde su creación.'}
-                />
-
-                <SyntaxBlock
-                    method="GET"
-                    url="https://www.graduadosup-api.com/api/faculties"
-                    response={JSON.stringify(facultyResponse, null, 2)}
-                />
-
-                < InfoRespComponent
-                    endpoint={'faculties'}
-                    descriptionEndpoint={'Puedes obtener acceso a un único dato de la lista de facultades agregando un id como un parámetro, utilizando el endpoint'}
-                    descriptionFilter={'Utilizando el endpoint /faculties/1/career, podrás obtener un listado detallado de las carreras que han cursado los egresados de una facultad en particular.'}
-                />
-            </section>
-
-
-            <section id="campus" ref={campusRef}>
-                <InforEndpoint 
-                    title={'Campus'}
-                    endpoint={'campus'}
-                    descriptionTitle={'La Universidad de Panamá (UP) tiene varios campus, entre ellos los centros regionales y extensiones en Azuero, Bocas del Toro, Coclé, Colón, Darién, Los Santos, Panamá Este, Panamá Oeste, San Miguelito y Veraguas.'}
-                    descriptionEndpoint={'Este recurso te permite conocer el número total de egresados de todas las facultades a lo largo de los años, en cada uno de los campus de la Universidad de Panamá.'}
-                />
-                
-                <SyntaxBlock
-                    method="GET"
-                    url="https://www.graduadosup-api.com/api/campus"
-                    response={JSON.stringify(campusResponse, null, 2)}
-                />
-
-                <InfoRespComponent
-                    endpoint='campus'
-                    descriptionEndpoint='Puedes obtener acceso a un único dato de la lista de campus agregando un id como un parámetro, utilizando el endpoint'
-                    descriptionFilter='Hasta el momento no hay soporte para filtrar por parámetros. Pero ya se está trabajando en ello.'
-                />
-            </section>
+            ))}
         </section>
     )
 }
