@@ -7,8 +7,13 @@ export function NavigationProvider({ children }) {
 
   const handleClick = () => setClick(!click);
 
+  const value = {
+    click,
+    handleClick,
+  };
+
   return (
-    <NavigationContext.Provider value={{ click, handleClick }}>
+    <NavigationContext.Provider value={value}>
       {children}
     </NavigationContext.Provider>
   );

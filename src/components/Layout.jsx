@@ -6,7 +6,7 @@ import Footer from './Footer';
 
 const Layout = ({ children }) => {
 
-    const { click, setClick } = useNavigation();
+    const { click, handleClick } = useNavigation();
     const { theme, toggleTheme } = useTheme();
 
     return (
@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
             {/* Aquí puedes agregar componentes comunes como Navbar, Footer, etc. */}
             <Header
                 click={click}
-                setClick={setClick}
+                handleClick={handleClick}
                 toggleTheme={toggleTheme}
                 theme={theme}
             />
