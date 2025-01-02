@@ -1,5 +1,5 @@
-import HeroTitle from "./HeroTitle";
-import HeroSubtitle from "./HeroSubtitle";
+import HeroTitle from "./hero/HeroTitle";
+import HeroSubtitle from "./hero/HeroSubtitle";
 import BtnStarted from "./button/BtnStarted";
 import BtnGithub from "./button/BtnGithub";
 import 'aos/dist/aos.css';
