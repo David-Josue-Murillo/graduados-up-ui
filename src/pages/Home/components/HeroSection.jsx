@@ -1,8 +1,8 @@
-import GitHubIcons from "../../../components/icons/GitHubIcons";
-import 'aos/dist/aos.css';
-import { Link } from "react-router-dom";
 import HeroTitle from "./HeroTitle";
 import HeroSubtitle from "./HeroSubtitle";
+import BtnStarted from "./button/BtnStarted";
+import BtnGithub from "./button/BtnGithub";
+import 'aos/dist/aos.css';
 
 const HeroSection = ({theme}) => {
     return (
@@ -11,21 +11,8 @@ const HeroSection = ({theme}) => {
             <HeroSubtitle />
 
             <div className="flex flex-wrap justify-center gap-4 mt-10 text-xs md:text-sm md:mt-10">
-                <Link to='/documentation'>
-                    <button className="bg-green-600 text-white px-6 py-3 rounded-md shadow hover:bg-green-700">
-                            Get Started
-                    </button>
-                </Link> 
-                
-                <a
-                    href="https://github.com/David-Josue-Murillo/graduadosup-api"
-                    className="flex border border-gray-300 px-4 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:border-green-700 hover:text-green-700"
-                >
-                    <GitHubIcons 
-                        theme={theme}
-                    />
-                    <span className="pl-2 pt-1">GitHub</span>
-                </a>
+                <BtnStarted />
+                <BtnGithub theme={theme} />
             </div>
         </section>
     );
