@@ -48,6 +48,8 @@ const ChartComponent = () => {
 
     // Calcular totales por año
     const yearlyTotals = useMemo(() => {
+        console.log('Totakes ' + dataGraduate.length);
+        
         // Verificar que dataGraduate sea un array
         if (!Array.isArray(dataGraduate)) {
             console.error('dataGraduate no es un array:', dataGraduate);
@@ -62,7 +64,6 @@ const ChartComponent = () => {
             return acc;
         }, {});
 
-        console.log('Totales por año:', totals);
         return totals;
     }, [dataGraduate]);
 
