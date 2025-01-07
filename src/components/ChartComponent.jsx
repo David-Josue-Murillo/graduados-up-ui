@@ -2,9 +2,11 @@ import { Line } from "react-chartjs-2";
 import { useGraduatesData } from "../hooks/useGraduateData"; 
 import { defaultChartOptions, createChartData } from "../config/ChartConfig";
 import YearlySummary from "./YearlySummary";
+import { useFilter } from "../contexts/FilterContext";
 
 const ChartComponent = () => {
-    const { isLoading, error, yearlyTotals, sortedYearlyData } = useGraduatesData();
+    const { data } = useFilter(); 
+    const { isLoading, error, yearlyTotals, sortedYearlyData } = data;
     
 
     if (isLoading) return <div className="dark:text-gray-100 text-center py-4">Cargando...</div>;

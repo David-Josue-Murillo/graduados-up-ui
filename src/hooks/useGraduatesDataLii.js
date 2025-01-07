@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { fetchAllGraduates } from "../api/numGraduates";
 
-export const useGraduatesData = () => {
+export const useGraduatesDataLii = () => {
     const [dataGraduate, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
