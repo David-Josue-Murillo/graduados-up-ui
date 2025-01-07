@@ -5,6 +5,7 @@ import YearlySummary from "./YearlySummary";
 
 const ChartComponent = () => {
     const { isLoading, error, yearlyTotals, sortedYearlyData } = useGraduatesData();
+    
 
     if (isLoading) return <div className="dark:text-gray-100 text-center py-4">Cargando...</div>;
     if (error) return <div className="text-red-500 py-4">Error: {error}</div>;

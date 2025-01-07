@@ -5,8 +5,8 @@ export const GRADUATES_CONTENT = {
 };
 
 export const FILTER_OPTIONS = [
-    { id: 1, label: 'Graduados entre 2018-2024', value: '2018-2024' },
-    { id: 2, label: 'Graduados entre 2010-2018', value: '2010-2018' },
+    { id: 1, label: 'Graduados entre 2019-2022', value: '2019-2022' },
+    { id: 2, label: 'Graduados de Ingeniería en Informática', value: 'Ingeniería en Informática' },
     { id: 3, label: 'Graduados entre 2000-2010', value: '2000-2010' },
     { id: 4, label: 'Graduados en Ingeniería', value: 'ingenieria' },
     { id: 5, label: 'Graduados en Ciencias', value: 'ciencias' },
