@@ -3,11 +3,15 @@ import { fetchAllGraduates } from "../api/numGraduates";
 
 const FilterContext = createContext();
 
-export function FilterProvider({ children }) {
-    // Estado para el filtro activo
-    const [activeFilter, setActiveFilter] = useState(null);
+// Definir los filtros disponibles y sus condiciones
+const FILTER_CONDITIONS = {
+    '2019-2022': () => true, // Sin filtrado adicional, toma todos los datos
+    'Ingeniería en Informática': (item) => item?.career?.name === 'Lic. en Ingeniera en Informática',
+    // Puedes agregar más filtros aquí
+};
 
-    // Estado para los datos
+export function FilterProvider({ children }) {
+    const [activeFilter, setActiveFilter] = useState(null);
     const [data, setData] = useState({
         isLoading: false,
         error: null,
@@ -15,12 +19,17 @@ export function FilterProvider({ children }) {
         sortedYearlyData: { years: [], totals: [] }
     });
 
-    // Función para procesar los datos
-    const processData = useCallback((apiData) => {
+    // Función unificada para procesar datos con filtros dinámicos
+    const processData = useCallback((apiData, filterType) => {
         const rawData = Array.isArray(apiData) ? apiData : apiData.data || [];
+        const filterCondition = FILTER_CONDITIONS[filterType] || (() => true);
         
         const yearlyTotals = rawData.reduce((acc, item) => {
-            if (item?.year != null && item?.quantity != null) {
+            if (
+                item?.year != null && 
+                item?.quantity != null && 
+                filterCondition(item)
+            ) {
                 const yearKey = item.year.toString();
                 acc[yearKey] = (acc[yearKey] || 0) + item.quantity;
             }
@@ -37,71 +46,48 @@ export function FilterProvider({ children }) {
         };
     }, []);
 
-    const processDataLii = useCallback((apiData) => {
-        const rawData = Array.isArray(apiData) ? apiData : apiData.data || [];
-        
-        const yearlyTotals = rawData.reduce((acc, item) => {
-            if (item?.year != null && item?.quantity != null && item?.career.name == 'Lic. en Ingeniera en Informática') {
-                const yearKey = item.year.toString();
-                acc[yearKey] = (acc[yearKey] || 0) + item.quantity;
-            }
-            return acc;
-        }, {});
-
-        const entries = Object.entries(yearlyTotals).sort();
-        return {
-            yearlyTotals,
-            sortedYearlyData: {
-                years: entries.map(([year]) => year),
-                totals: entries.map(([, total]) => total)
-            }
-        };
-    }, []);
-
-    // Función para manejar la selección de filtros
     const handleFilterClick = useCallback(async (value) => {
         setActiveFilter(value);
     }, []);
 
     useEffect(() => {
         const fetchData = async () => {
-            if(!activeFilter) return;
+            if (!activeFilter) return;
 
-            setData(prev => ({...prev, isLoading: true, error: null}));
+            setData(prev => ({ ...prev, isLoading: true, error: null }));
 
             try {
-                let apiData = await fetchAllGraduates();
-
-                switch (activeFilter) {
-                    case '2019-2022':
-                        const processedData = processData(apiData);
-                        setData({
-                            isLoading: false,
-                            error: null,
-                            ...processedData
-                        });
-                        break;
-    
-                    case 'Ingeniería en Informática':
-                        const processedDataLii = processDataLii(apiData);
-                        setData({
-                            isLoading: false,
-                            error: null,
-                            ...processedDataLii
-                        });
-                        break
+                const apiData = await fetchAllGraduates();
+                const processedData = processData(apiData, activeFilter);
                 
-                    default:
-                        console.log("No filter selected");
-                        break;
-                }
+                setData({
+                    isLoading: false,
+                    error: null,
+                    ...processedData
+                });
             } catch (error) {
-                setData({ isLoading: false, error: error.message });
+                setData({ 
+                    isLoading: false, 
+                    error: error.message,
+                    yearlyTotals: {},
+                    sortedYearlyData: { years: [], totals: [] }
+                });
             }
         };
 
         fetchData();
     }, [activeFilter, processData]);
+
+    // Función para limpiar filtros
+    const clearFilter = useCallback(() => {
+        setActiveFilter(null);
+        setData({
+            isLoading: false,
+            error: null,
+            yearlyTotals: {},
+            sortedYearlyData: { years: [], totals: [] }
+        });
+    }, []);
 
     return (
         <FilterContext.Provider 
@@ -109,6 +95,7 @@ export function FilterProvider({ children }) {
                 activeFilter,
                 data,
                 handleFilterClick,
+                clearFilter
             }}
         >
             {children}
