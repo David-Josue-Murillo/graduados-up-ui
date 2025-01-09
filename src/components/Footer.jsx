@@ -27,21 +27,21 @@ const Footer = () => {
                         <h3 className="text-lg font-bold mb-2">Mis redes sociales</h3>
                         <div className="flex space-x-4 justify-center">
                             <a
-                                href="#"
+                                href="https://x.com/devdDavid507"
                                 className="hover:text-green-400 transition-colors"
                                 aria-label="Twitter"
                             >
                                 <FaXTwitter />
                             </a>
                             <a
-                                href="#"
+                                href="https://www.linkedin.com/in/david-murillo-471a132a0/"
                                 className="hover:text-green-400 transition-colors"
-                                aria-label="LinkedIn"
+                                aria-label="Linkedin"
                             >
                                 <FaLinkedin />
                             </a>
                             <a
-                                href="#"
+                                href="https://github.com/David-Josue-Murillo"
                                 className="hover:text-green-400 transition-colors"
                                 aria-label="GitHub"
                             >
