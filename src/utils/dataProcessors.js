@@ -18,6 +18,8 @@ export const processData = (apiData, filterType, filterConditions) => {
  */
 const calculateYearlyTotals = (data, filterCondition) => {
     return data.reduce((acc, item) => {
+        console.log(item.career.faculty.name);
+        
         if (
             item?.year != null && 
             item?.quantity != null && 
