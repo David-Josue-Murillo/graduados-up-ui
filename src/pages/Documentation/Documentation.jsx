@@ -1,8 +1,8 @@
+import { memo } from "react";
+import { useDocumentationRefs } from "../../hooks/useDocumentationRefs";
 import SideBar from "./components/SideBar";
 import DocsHub from "./components/DocsHub";
-import { useDocumentationRefs } from "../../hooks/useDocumentationRefs";
 import 'aos/dist/aos.css';
-import { memo } from "react";
 
 const Documentation = () => {
     const { refs, scrollToSection } = useDocumentationRefs();

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SectionHeader = ({ id, title, description }) => (
     <section id={id} className="my-8 2xl:my-12">
         <h2 className="text-green-600 text-4xl font-farro-bold font-bold my-2">{title}</h2>

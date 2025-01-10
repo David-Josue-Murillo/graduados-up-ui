@@ -1,5 +1,3 @@
-import React from 'react'
-
 const InforEndpoint = ({title = '', endpoint = '', descriptionTitle = '', descriptionEndpoint = ''}) => {
     return (
         <section className='mt-16'>

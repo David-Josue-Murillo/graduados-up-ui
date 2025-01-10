@@ -1,5 +1,4 @@
 import { Line } from "react-chartjs-2";
-import { useGraduatesData } from "../hooks/useGraduateData"; 
 import { defaultChartOptions, createChartData } from "../config/ChartConfig";
 import YearlySummary from "./YearlySummary";
 import { useFilter } from "../contexts/FilterContext";
