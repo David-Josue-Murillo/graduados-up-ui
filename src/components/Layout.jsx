@@ -1,4 +1,3 @@
-import React from 'react'
 import { useTheme } from '../contexts/ThemeContext';
 import { useNavigation } from '../contexts/NavigationContext';
 import Header from './Header';
@@ -10,8 +9,7 @@ const Layout = ({ children }) => {
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <div className={`app ${theme} dark:bg-gray-950`}>
-            {/* Aquí puedes agregar componentes comunes como Navbar, Footer, etc. */}
+        <div className={`app ${theme} dark:bg-gray-950 flex flex-col min-h-screen`}>
             <Header
                 click={click}
                 handleClick={handleClick}
@@ -19,7 +17,9 @@ const Layout = ({ children }) => {
                 theme={theme}
             />
 
-            {children}
+            <main className='flex-grow'>
+                {children}
+            </main>
 
             <Footer />
         </div>

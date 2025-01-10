@@ -18,3 +18,17 @@
     src: url('./assets/fonts/Farro-Light.ttf') format('truetype');
     font-style: italic;
 }
+
+body {
+    font-family: 'farro', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#root {
+    min-height: 100vh;
+}
