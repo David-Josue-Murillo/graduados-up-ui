@@ -6,7 +6,7 @@ const AvailableRoutes = ({ availableRoutesRef }) => {
             <h2 className="text-lg dark:text-gray-100 font-semibold mt-8" ref={availableRoutesRef} id="available-routes">
                 Rutas Disponibles
             </h2>
-            <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-2 list-disc mt-2 pl-4 md:pl-8"
+            <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-2 list-disc mt-2 pl-4 md:pl-8"
                 aria-describedby="available-routes">
                 {AVAILABLE_ROUTES.map((route) => (
                     <li key={route.resource}>

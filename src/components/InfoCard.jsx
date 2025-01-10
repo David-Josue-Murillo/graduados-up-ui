@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 const InfoCard = ({ title, content,link }) => {
     return (
         <div className="w-8/12 m-auto">
-            <h3 className="text-xl font-semibold mb-2 dark:text-slate-300">
+            <h3 className="text-xl font-semibold mb-2 dark:text-gray-100">
                 {title}
             </h3>
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-500 dark:text-gray-300 text-sm">
                 {content}
                 {link && (
                     <Link

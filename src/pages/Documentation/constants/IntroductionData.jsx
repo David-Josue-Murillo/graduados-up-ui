@@ -6,7 +6,7 @@ const IntroductionData = [
 ];
 
 const DataList = () => (
-    <ul className="text-gray-800 dark:text-gray-400 font-farro-light text-sm md:text-sm space-y-2 list-disc pl-5"
+    <ul className="text-gray-800 dark:text-gray-300 font-farro-light text-sm md:text-sm space-y-2 list-disc pl-5"
         aria-describedby="datos-disponibles">
         {IntroductionData.map((item, index) => (
             <li key={index}>{item}</li>
@@ -19,7 +19,7 @@ export const AboutSection = () => (
         <h2 className="text-lg dark:text-gray-100 font-medium mt-8" id="about-graduados-up">
             ¿Qué es Graduados UP?
         </h2>
-        <p className="font-farro-light text-sm md:text-base text-gray-600 dark:text-gray-400"
+        <p className="font-farro-light text-sm md:text-base text-gray-600 dark:text-gray-300"
             aria-describedby="about-graduados-up">
             Graduados UP es un proyecto que busca facilitar la gestión de graduados de la Universidad del Pacífico,
             proporcionando una API que permite acceder a datos detallados sobre los graduados, sus facultades,

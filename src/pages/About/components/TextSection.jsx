@@ -1,5 +1,5 @@
 const TextSection = ({ title, content }) => (
-    <section className="lg:px-12">
+    <section className="lg:px-12 dark:text-gray-300">
         <h1 className="text-green-600 text-center text-3xl font-farro-bold font-bold">
             {title}
         </h1>
@@ -10,7 +10,7 @@ const TextSection = ({ title, content }) => (
                 </p>
             ))
         ) : (
-            <p className="text-gray-700 dark:text-gray-300 mt-4">{content}</p>
+            <p className="text-gray-700 mt-4">{content}</p>
         )}
     </section>
 );
