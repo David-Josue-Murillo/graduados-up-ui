@@ -8,7 +8,7 @@ const About = () => {
     const { introContent, profileDescription } = ABOUT_CONTENT;
 
     return (
-        <main className="mx-2 md:mx-16 xl:container lg:mx-auto px-6 py-12 mt-20">
+        <main className="mx-2 md:mx-16 xl:container lg:mx-auto px-6 py-12 mt-20 2xl:mt-28">
             <TextSection
                 title="¿Qué es Graduados UP?"
                 content={introContent}
