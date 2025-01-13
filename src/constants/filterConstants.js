@@ -5,6 +5,7 @@ export const FILTER_CONDITIONS = {
     'faeco': (item) => item?.career?.faculty?.name === 'Administración de Empresas y Contabilidad',
     'up central': (item) => item?.campus?.id == 1,
     'cruv': (item) => item?.campus?.id == 11,
+    'facultades': () => true,
     // Puedes agregar más filtros aquí
 };
 

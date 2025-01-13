@@ -1,3 +1,5 @@
+import { faculties } from './faculties'; 
+
 /**
  * Procesa los datos con un filtro específico
  * @param {Array} apiData - Datos crudos de la API
@@ -9,6 +11,13 @@ export const processData = (apiData, filterType, filterConditions) => {
     const rawData = Array.isArray(apiData) ? apiData : apiData.data || [];
     const filterCondition = filterConditions[filterType] || (() => true);
     
+    if(filterCondition.name === 'facultades') {
+        console.log('facultades');
+        const facultiesTotals = calculateFacultyTotals(rawData);
+        console.log(facultiesTotals);
+        
+        return createDataStructure(facultiesTotals);
+    } 
     const yearlyTotals = calculateYearlyTotals(rawData, filterCondition);
     return createDataStructure(yearlyTotals);
 };
@@ -30,6 +39,21 @@ const calculateYearlyTotals = (data, filterCondition) => {
         }
         return acc;
     }, {});
+};
+
+const calculateFacultyTotals = (data) => {
+    let facultiesMap = faculties;
+    
+    data.forEach(item => {
+        if (
+            item?.year != null && 
+            item?.quantity != null
+        ) {
+            facultiesMap[item.career.faculty.name] = (facultiesMap[item.career.faculty.name] || 0) + item.quantity;
+        }
+    }, {});
+
+    return facultiesMap;
 };
 
 /**

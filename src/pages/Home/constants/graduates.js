@@ -10,7 +10,7 @@ export const FILTER_OPTIONS = [
     { id: 3, label: 'Graduados de Fac. en Administración  de Empresas', value: 'faeco' },
     { id: 4, label: 'Graduados en la sede principal', value: 'up central' },
     { id: 5, label: 'Graduados en CRU Veraguas', value: 'cruv' },
-    { id: 6, label: 'Graduados por facultad', value: 'humanidades' }
+    { id: 6, label: 'Graduados por facultad', value: 'facultades' }
 ];
 
 export const INFO_CARDS = [
