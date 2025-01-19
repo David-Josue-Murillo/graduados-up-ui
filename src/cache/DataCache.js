@@ -27,3 +27,5 @@ export class DataCache {
         this.lastFetchTimestamp = null;
     }
 }
+
+export const graduatesCache = new DataCache();

@@ -1,6 +1,12 @@
 import api from "./api"
+import { graduatesCache } from "../cache/DataCache";
 
-const fetchAllGraduates = async () => {
+export const fetchAllGraduates = async (forceRefresh = false) => {
+
+    const cachedData = graduatesCache.getData();
+    if(!forceRefresh && cachedData) {
+        return cachedData;
+    }
 
     let allData = [];
     let currentPage = 1;
@@ -13,17 +19,16 @@ const fetchAllGraduates = async () => {
             const { data } = response; // Asegúrate de que esta estructura coincide con la API
 
             allData = [...allData, ...data.data]; // Combina los datos
-            hasMore = data.data.length === limit; // Si la página tiene menos datos, significa que es la última
-            currentPage++; // Pasa a la siguiente página
+            hasMore = data.data.length === limit; 
+            currentPage++;
         }
+
+        graduatesCache.setData(allData);
     } catch (error) {
         console.error('Error fetching data:', error);
         throw error;
     }
-
+    
     return allData;
 };
 
-export {
-    fetchAllGraduates
-}
