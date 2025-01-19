@@ -44,7 +44,9 @@ export const useFilterData = (filterConditions) => {
             setData(prev => ({ ...prev, isLoading: true, error: null }));
 
             try {
+                console.log('Descargando datos');
                 const apiData = await fetchAllGraduates();
+                console.log('Datos procesados');
                 const processedData = processData(apiData, activeFilter, filterConditions);
                 
                 setData({
