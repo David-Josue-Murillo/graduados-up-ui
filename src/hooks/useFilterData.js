@@ -16,6 +16,27 @@ export const useFilterData = (filterConditions) => {
         setData(INITIAL_DATA_STATE);
     }, []);
 
+    // Nuevo método para forzar la actualización de datos
+    const refreshData = useCallback(async () => {
+        if (!activeFilter) return;
+        
+        setData(prev => ({ ...prev, isLoading: true, error: null }));
+        try {
+            const apiData = await fetchAllGraduates(true); // forzar actualización
+            const processedData = processData(apiData, activeFilter, filterConditions);
+            setData({
+                isLoading: false,
+                error: null,
+                ...processedData
+            });
+        } catch (error) {
+            setData({ 
+                ...INITIAL_DATA_STATE,
+                error: error.message
+            });
+        }
+    }, [activeFilter, filterConditions]);
+
     useEffect(() => {
         const fetchData = async () => {
             if (!activeFilter) return;
@@ -46,6 +67,7 @@ export const useFilterData = (filterConditions) => {
         activeFilter,
         data,
         handleFilterClick,
-        clearFilter
+        clearFilter,
+        refreshData
     };
 };
